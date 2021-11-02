@@ -19,7 +19,7 @@ class FacebookController extends Controller
 
     public function loginWithFacebook()
     {
-        try {
+        // try {
 
             $user = Socialite::driver('facebook')->user();
             $isUser = User::where('fb_id', $user->id)->first();
@@ -38,8 +38,8 @@ class FacebookController extends Controller
                 Auth::login($createUser);
                 return redirect('/dashboard');
             }
-        } catch (\Exception $exception) {
-            dd($exception->getMessage());
-        }
+        // } catch (\Exception $exception) {
+        //     dd($exception->getMessage());
+        // }
     }
 }
