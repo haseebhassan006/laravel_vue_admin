@@ -30,4 +30,8 @@ class FrontendController extends Controller
         //     return false;
         // }
     }
+
+    public function privacyPolicy(){
+        return "hello";
+    }
 }
