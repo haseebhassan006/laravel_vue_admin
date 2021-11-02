@@ -260,8 +260,8 @@
               <button type="submit" class="btn btn-primary">Login</button>
               <p>Or Sign Up Using</p>
               <ul>
-                <li><a href="{{route('login.fb')}}"><img src="frontend/assets/images/social-1.png" class="img-fluid" alt=""></a></li>
-                <li><a href="#"><img src="frontend/assets/images/social-2.png" class="img-fluid" alt=""></a></li>
+                <li><a href="{{route('login.fb')}}"><img src="{{asset('frontend/assets/images/social-1.png')}}" class="img-fluid" alt=""></a></li>
+                <li><a href="{{route('login.gmail')}}"><img src="{{asset('frontend/assets/images/social-2.png')}}" class="img-fluid" alt=""></a></li>
               </ul>
             </form>
           </div>

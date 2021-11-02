@@ -17,12 +17,7 @@ class User extends Authenticatable
      *
      * @var string[]
      */
-    protected $fillable = [
-        'name',
-        'email',
-        'password',
-        'fb_id',
-    ];
+    protected $guarded=[];
     protected $appends = [
         'profile_photo_url',
     ];

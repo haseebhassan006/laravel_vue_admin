@@ -3,6 +3,7 @@
 namespace App\Http\Controllers\backend\social;
 
 use App\Models\User;
+use Illuminate\Support\Str;
 use Illuminate\Http\Request;
 use App\Http\Controllers\Controller;
 use Illuminate\Support\Facades\Auth;
@@ -31,7 +32,7 @@ class FacebookController extends Controller
                     'name' => $user->name,
                     'email' => $user->email,
                     'fb_id' => $user->id,
-                    'password' => encrypt('admin@123')
+                    'password' => encrypt(Str::uuid()->toString())
                 ]);
 
                 Auth::login($createUser);
@@ -41,5 +42,4 @@ class FacebookController extends Controller
             dd($exception->getMessage());
         }
     }
-
 }
