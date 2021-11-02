@@ -29,7 +29,7 @@ class GoogleController extends Controller
      */
     public function handleGoogleCallback()
     {
-        // try {
+        try {
 
             $user = Socialite::driver('google')->user();
 
@@ -45,15 +45,15 @@ class GoogleController extends Controller
                     'name' => $user->name,
                     'email' => $user->email,
                     'google_id' => $user->id,
-                    'password' => encrypt(Str::uuid()->toString())
+                    'password' => encrypt(Str::random(10))
                 ]);
 
                 Auth::login($newUser);
 
                 return redirect('/home');
             }
-        // } catch (\Exception $e) {
-        //     dd($e->getMessage());
-        // }
+        } catch (\Exception $e) {
+            dd($e->getMessage());
+        }
     }
 }
