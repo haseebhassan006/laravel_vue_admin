@@ -41,9 +41,16 @@
                     <li class="nav-item">
                       <a class="nav-link" href="#">Customers</a>
                     </li>
+                    @auth
                     <li class="nav-item">
+                      <a class="nav-link" href="#">{{Auth::user()->name}}</a>
+                    </li>
+                    @else
+                     <li class="nav-item">
                       <a class="nav-link" href="#">Members</a>
                     </li>
+                    @endauth
+
                     <li class="nav-item">
                       <a class="nav-link" href="#">Contact Rave</a>
                     </li>
