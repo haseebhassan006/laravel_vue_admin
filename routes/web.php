@@ -4,6 +4,8 @@ use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\FrontendController;
 
+use App\Http\Controllers\frontend\social\GoogleController;
+use App\Http\Controllers\frontend\social\FacebookController;
 use App\Http\Controllers\backend\dashboard\DashboardController;
 
 /*
