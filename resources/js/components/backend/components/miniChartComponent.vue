@@ -29,23 +29,23 @@
     export default {
         methods: {
             loadMiniChart(){
-                        var barchartColors = getChartColorsArray("#mini-chart1");
-                        var options = {
-                        series : [60, 40],
-                        chart : {
-                        type : "donut",
-                        height : 110
-                        },
-                        colors : barchartColors,
-                        legend : {
-                        show : false
-                        },
-                        dataLabels : {
-                        enabled : false
-                        }
-                        };
-                        var chart = new ApexCharts(document.querySelector("#mini-chart1"), options);
-                        chart.render();
+                       var barchartColors = getChartColorsArray("#mini-chart1");
+var options = {
+ series : [60, 40],
+ chart : {
+   type : "donut",
+   height : 110
+ },
+ colors : barchartColors,
+ legend : {
+   show : false
+ },
+ dataLabels : {
+   enabled : false
+ }
+};
+var chart = new ApexCharts(document.querySelector("#mini-chart1"), options);
+chart.render();
             }
         },
         mounted() {

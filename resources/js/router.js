@@ -15,8 +15,12 @@ const routes = [
         path: "/",
         redirect: { path: '/dashboard' }
     },
-    { path: "/dashboard", component: () => setComponent("dashboard/Home"), name: "Blogs Home",
+    { path: "/dashboard", component: () => setComponent("dashboard/Home"), name: "Dashboard",
      meta: {permissions:"dashboard-view" }
+    },
+    {
+        path: "/users", component: () => setComponent("user/Users"), name: "Users",
+        meta: { permissions: "users-view" }
     },
 
 

@@ -25,6 +25,9 @@
         "vue-template-compiler": "^2.6.12"
     },
     "dependencies": {
+        "@mapbox/mapbox-gl-geocoder": "^4.7.4",
+        "mapbox-gl": "^2.5.1",
+        "nelo-mapbox-geocoder": "^1.0.24",
         "vue-router": "^3.5.3"
     }
 }

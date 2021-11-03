@@ -943,6 +943,19 @@
 <script>
 import minichart from "../../components/miniChartComponent"
     export default {
+        components: {minichart},
+        data() {
+            return {
+            prevRoute: null
+            };
+        },
+        beforeRouteEnter(to, from, next) {
+        next(vm => {
+            console.log(from);
+            console.log(vm.prevRoute );
+            vm.prevRoute = from
+        })
+        },
         mounted() {
             console.log('Component mounted.')
         }

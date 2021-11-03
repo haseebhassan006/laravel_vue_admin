@@ -1022,6 +1022,21 @@ __webpack_require__.r(__webpack_exports__);
 //
 
 /* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = ({
+  components: {
+    minichart: _components_miniChartComponent__WEBPACK_IMPORTED_MODULE_0__["default"]
+  },
+  data: function data() {
+    return {
+      prevRoute: null
+    };
+  },
+  beforeRouteEnter: function beforeRouteEnter(to, from, next) {
+    next(function (vm) {
+      console.log(from);
+      console.log(vm.prevRoute);
+      vm.prevRoute = from;
+    });
+  },
   mounted: function mounted() {
     console.log('Component mounted.');
   }

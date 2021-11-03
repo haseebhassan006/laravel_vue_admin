@@ -3160,9 +3160,18 @@ var routes = [{
   component: function component() {
     return setComponent("dashboard/Home");
   },
-  name: "Blogs Home",
+  name: "Dashboard",
   meta: {
     permissions: "dashboard-view"
+  }
+}, {
+  path: "/users",
+  component: function component() {
+    return setComponent("user/Users");
+  },
+  name: "Users",
+  meta: {
+    permissions: "users-view"
   }
 }];
 var router = new vue_router__WEBPACK_IMPORTED_MODULE_1__["default"]({
@@ -38802,6 +38811,16 @@ var map = {
 		"./resources/js/components/ExampleComponent.vue",
 		9
 	],
+	"./components/backend/components/breadcrumbComponent": [
+		"./resources/js/components/backend/components/breadcrumbComponent.vue",
+		9,
+		"resources_js_components_backend_components_breadcrumbComponent_vue"
+	],
+	"./components/backend/components/breadcrumbComponent.vue": [
+		"./resources/js/components/backend/components/breadcrumbComponent.vue",
+		9,
+		"resources_js_components_backend_components_breadcrumbComponent_vue"
+	],
 	"./components/backend/components/miniChartComponent": [
 		"./resources/js/components/backend/components/miniChartComponent.vue",
 		9,
@@ -38841,6 +38860,26 @@ var map = {
 		"./resources/js/components/backend/pages/error/404Component.vue",
 		9,
 		"resources_js_components_backend_pages_error_404Component_vue"
+	],
+	"./components/backend/pages/user/UsersComponent": [
+		"./resources/js/components/backend/pages/user/UsersComponent.vue",
+		9,
+		"resources_js_components_backend_pages_user_UsersComponent_vue"
+	],
+	"./components/backend/pages/user/UsersComponent.vue": [
+		"./resources/js/components/backend/pages/user/UsersComponent.vue",
+		9,
+		"resources_js_components_backend_pages_user_UsersComponent_vue"
+	],
+	"./components/backend/pages/user/UsersTable": [
+		"./resources/js/components/backend/pages/user/UsersTable.vue",
+		9,
+		"resources_js_components_backend_pages_user_UsersTable_vue"
+	],
+	"./components/backend/pages/user/UsersTable.vue": [
+		"./resources/js/components/backend/pages/user/UsersTable.vue",
+		9,
+		"resources_js_components_backend_pages_user_UsersTable_vue"
 	],
 	"./components/frontend/locationPickerComponent": [
 		"./resources/js/components/frontend/locationPickerComponent.vue",
@@ -39039,7 +39078,7 @@ module.exports = JSON.parse('{"_args":[["axios@0.21.4","C:\\\\laragon\\\\www\\\\
 /******/ 		// This function allow to reference async chunks
 /******/ 		__webpack_require__.u = (chunkId) => {
 /******/ 			// return url for filenames not based on template
-/******/ 			if ({"resources_js_components_backend_components_miniChartComponent_vue":1,"resources_js_components_backend_pages_dashboard_HomeComponent_vue":1,"resources_js_components_backend_pages_error_401Component_vue":1,"resources_js_components_backend_pages_error_404Component_vue":1,"resources_js_components_frontend_locationPickerComponent_vue":1,"resources_js_frontend_app_js":1}[chunkId]) return "js/" + chunkId + ".js";
+/******/ 			if ({"resources_js_components_backend_components_breadcrumbComponent_vue":1,"resources_js_components_backend_components_miniChartComponent_vue":1,"resources_js_components_backend_pages_dashboard_HomeComponent_vue":1,"resources_js_components_backend_pages_error_401Component_vue":1,"resources_js_components_backend_pages_error_404Component_vue":1,"resources_js_components_backend_pages_user_UsersComponent_vue":1,"resources_js_components_backend_pages_user_UsersTable_vue":1,"resources_js_components_frontend_locationPickerComponent_vue":1,"resources_js_frontend_app_js":1}[chunkId]) return "js/" + chunkId + ".js";
 /******/ 			// return url for filenames based on template
 /******/ 			return undefined;
 /******/ 		};
