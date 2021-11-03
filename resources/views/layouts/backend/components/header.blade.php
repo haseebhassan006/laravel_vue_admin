@@ -8,7 +8,7 @@
                         <img src="assets/images/logo-sm.svg" alt="" height="30">
                     </span>
                     <span class="logo-lg">
-                        <img src="assets/images/logo-sm.svg" alt="" height="24"> <span class="logo-txt">Dason</span>
+                        <img src="assets/images/logo-sm.svg" alt="" height="24"> <span class="logo-txt">{{config('app.name')}}</span>
                     </span>
                 </a>
 
@@ -17,7 +17,7 @@
                         <img src="assets/images/logo-sm.svg" alt="" height="30">
                     </span>
                     <span class="logo-lg">
-                        <img src="assets/images/logo-sm.svg" alt="" height="24"> <span class="logo-txt">Dason</span>
+                        <img src="assets/images/logo-sm.svg" alt="" height="24"> <span class="logo-txt">{{config('app.name')}}</span>
                     </span>
                 </a>
             </div>

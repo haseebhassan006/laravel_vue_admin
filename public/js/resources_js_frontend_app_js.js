@@ -45,8 +45,10 @@ __webpack_require__.r(__webpack_exports__);
 //
 //
 //
+//
+//
 /* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = ({
-  props: ['active_name'],
+  props: ['active_name', 'previous'],
   beforeRouteEnter: function beforeRouteEnter(to, from, next) {
     next(function (vm) {
       vm.prevRoute = from;
@@ -102,12 +104,12 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = ({
   methods: {
     loadMiniChart: function loadMiniChart() {
-      var barchartColors = getChartColorsArray("#mini-chart1");
+      var barchartColors = getChartColorsArray("#mini-chart");
       var options = {
-        series: [60, 40],
+        series: [60, 50],
         chart: {
           type: "donut",
-          height: 110
+          height: 115
         },
         colors: barchartColors,
         legend: {
@@ -117,11 +119,12 @@ __webpack_require__.r(__webpack_exports__);
           enabled: false
         }
       };
-      var chart = new ApexCharts(document.querySelector("#mini-chart1"), options);
+      var chart = new ApexCharts(document.querySelector("#mini-chart"), options);
       chart.render();
     }
   },
   mounted: function mounted() {
+    this.loadMiniChart();
     console.log('Component mounted.');
   }
 });
@@ -1258,6 +1261,8 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony export */   "default": () => (__WEBPACK_DEFAULT_EXPORT__)
 /* harmony export */ });
 /* harmony import */ var _UsersTable_vue__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ./UsersTable.vue */ "./resources/js/components/backend/pages/user/UsersTable.vue");
+/* harmony import */ var _components_breadcrumbComponent_vue__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ../../components/breadcrumbComponent.vue */ "./resources/js/components/backend/components/breadcrumbComponent.vue");
+//
 //
 //
 //
@@ -1265,9 +1270,11 @@ __webpack_require__.r(__webpack_exports__);
 //
 //
 
+
 /* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = ({
   components: {
-    UsersTable: _UsersTable_vue__WEBPACK_IMPORTED_MODULE_0__["default"]
+    userstable: _UsersTable_vue__WEBPACK_IMPORTED_MODULE_0__["default"],
+    breadcrumb: _components_breadcrumbComponent_vue__WEBPACK_IMPORTED_MODULE_1__["default"]
   },
   data: function data() {
     return {
@@ -3226,11 +3233,35 @@ var render = function() {
                 "ol",
                 { staticClass: "breadcrumb m-0" },
                 [
-                  _c("router-link", { attrs: { to: _vm.prevRoutePath } }, [
-                    _vm._v("Previous Page")
+                  _c(
+                    "li",
+                    { staticClass: "breadcrumb-item" },
+                    [
+                      _c("router-link", { attrs: { to: "/" } }, [
+                        _vm._v("Dashboard")
+                      ])
+                    ],
+                    1
+                  ),
+                  _vm._v(" "),
+                  _vm._l(_vm.previous, function(item) {
+                    return _c(
+                      "li",
+                      { key: item.id, staticClass: "breadcrumb-item" },
+                      [
+                        _c("router-link", { attrs: { to: item.link } }, [
+                          _vm._v(_vm._s(item.name))
+                        ])
+                      ],
+                      1
+                    )
+                  }),
+                  _vm._v(" "),
+                  _c("li", { staticClass: "breadcrumb-item active" }, [
+                    _vm._v(_vm._s(_vm.active_name))
                   ])
                 ],
-                1
+                2
               )
             ])
           ]
@@ -3312,7 +3343,7 @@ var staticRenderFns = [
               _c("div", {
                 staticClass: "apex-charts",
                 attrs: {
-                  id: "mini-chart1",
+                  id: "mini-chart",
                   "data-colors": '["#6951ce", "#f04d80"]'
                 }
               })
@@ -6123,7 +6154,15 @@ var render = function() {
   var _vm = this
   var _h = _vm.$createElement
   var _c = _vm._self._c || _h
-  return _c("div", [_c("UsersTable", { attrs: { users: _vm.users } })], 1)
+  return _c(
+    "div",
+    [
+      _c("breadcrumb", { attrs: { active_name: "Users List" } }),
+      _vm._v(" "),
+      _c("userstable", { attrs: { users: _vm.users } })
+    ],
+    1
+  )
 }
 var staticRenderFns = []
 render._withStripped = true
@@ -6359,7 +6398,7 @@ var staticRenderFns = [
               _vm._v(" "),
               _c("td", [_vm._v("UI/UX Designer")]),
               _vm._v(" "),
-              _c("td", [_vm._v("phyllisgatlin@Dason.com")]),
+              _c("td", [_vm._v("phyllisgatlin@example.com")]),
               _vm._v(" "),
               _c("td", [
                 _c("div", { staticClass: "d-flex gap-2" }, [
@@ -6456,7 +6495,7 @@ var staticRenderFns = [
               _vm._v(" "),
               _c("td", [_vm._v("Frontend Developer")]),
               _vm._v(" "),
-              _c("td", [_vm._v("jamesnix@Dason.com")]),
+              _c("td", [_vm._v("jamesnix@example.com")]),
               _vm._v(" "),
               _c("td", [
                 _c("div", { staticClass: "d-flex gap-2" }, [
@@ -6562,7 +6601,7 @@ var staticRenderFns = [
               _vm._v(" "),
               _c("td", [_vm._v("Backend Developer")]),
               _vm._v(" "),
-              _c("td", [_vm._v("darlenesmith@Dason.com")]),
+              _c("td", [_vm._v("darlenesmith@example.com")]),
               _vm._v(" "),
               _c("td", [
                 _c("div", { staticClass: "d-flex gap-2" }, [
@@ -6678,7 +6717,7 @@ var staticRenderFns = [
               _vm._v(" "),
               _c("td", [_vm._v("Full Stack Developer")]),
               _vm._v(" "),
-              _c("td", [_vm._v("williamswift@Dason.com")]),
+              _c("td", [_vm._v("williamswift@example.com")]),
               _vm._v(" "),
               _c("td", [
                 _c("div", { staticClass: "d-flex gap-2" }, [
@@ -6794,7 +6833,7 @@ var staticRenderFns = [
               _vm._v(" "),
               _c("td", [_vm._v("Frontend Developer")]),
               _vm._v(" "),
-              _c("td", [_vm._v("kevinwest@Dason.com")]),
+              _c("td", [_vm._v("kevinwest@example.com")]),
               _vm._v(" "),
               _c("td", [
                 _c("div", { staticClass: "d-flex gap-2" }, [
@@ -6900,7 +6939,7 @@ var staticRenderFns = [
               _vm._v(" "),
               _c("td", [_vm._v("UI/UX Designer")]),
               _vm._v(" "),
-              _c("td", [_vm._v("tommyhayes@Dason.com")]),
+              _c("td", [_vm._v("tommyhayes@example.com")]),
               _vm._v(" "),
               _c("td", [
                 _c("div", { staticClass: "d-flex gap-2" }, [
@@ -6997,7 +7036,7 @@ var staticRenderFns = [
               _vm._v(" "),
               _c("td", [_vm._v("Graphic Designer")]),
               _vm._v(" "),
-              _c("td", [_vm._v("dianaowens@Dason.com")]),
+              _c("td", [_vm._v("dianaowens@example.com")]),
               _vm._v(" "),
               _c("td", [
                 _c("div", { staticClass: "d-flex gap-2" }, [
@@ -7094,7 +7133,7 @@ var staticRenderFns = [
               _vm._v(" "),
               _c("td", [_vm._v("Angular Developer")]),
               _vm._v(" "),
-              _c("td", [_vm._v("paulsanchez@Dason.com")]),
+              _c("td", [_vm._v("paulsanchez@example.com")]),
               _vm._v(" "),
               _c("td", [
                 _c("div", { staticClass: "d-flex gap-2" }, [
@@ -7191,7 +7230,7 @@ var staticRenderFns = [
               _vm._v(" "),
               _c("td", [_vm._v("Web Designer")]),
               _vm._v(" "),
-              _c("td", [_vm._v("peterdryer@Dason.com")]),
+              _c("td", [_vm._v("peterdryer@example.com")]),
               _vm._v(" "),
               _c("td", [
                 _c("div", { staticClass: "d-flex gap-2" }, [
@@ -7297,7 +7336,7 @@ var staticRenderFns = [
               _vm._v(" "),
               _c("td", [_vm._v("Backend Developer")]),
               _vm._v(" "),
-              _c("td", [_vm._v("geraldmoyer@Dason.com")]),
+              _c("td", [_vm._v("geraldmoyer@example.com")]),
               _vm._v(" "),
               _c("td", [
                 _c("div", { staticClass: "d-flex gap-2" }, [
@@ -7394,7 +7433,7 @@ var staticRenderFns = [
               _vm._v(" "),
               _c("td", [_vm._v("Backend Developer")]),
               _vm._v(" "),
-              _c("td", [_vm._v("gailmcGuire@Dason.com")]),
+              _c("td", [_vm._v("gailmcGuire@example.com")]),
               _vm._v(" "),
               _c("td", [
                 _c("div", { staticClass: "d-flex gap-2" }, [

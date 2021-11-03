@@ -1,13 +1,15 @@
 <template>
   <div>
-    <UsersTable :users="users" />
+    <breadcrumb active_name="Users List"/>
+    <userstable :users="users" />
   </div>
 </template>
 
 <script>
-import UsersTable from "./UsersTable.vue";
+import userstable from "./UsersTable.vue";
+import breadcrumb from "../../components/breadcrumbComponent.vue";
 export default {
-  components: { UsersTable },
+  components: { userstable,breadcrumb},
   data() {
     return {
       users: [],

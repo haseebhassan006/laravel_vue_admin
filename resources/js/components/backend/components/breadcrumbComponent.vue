@@ -8,9 +8,11 @@
 
                                     <div class="page-title-right">
                                         <ol class="breadcrumb m-0">
-                                             <router-link :to="prevRoutePath">Previous Page</router-link>
-                                            <!-- <li class="breadcrumb-item"><a href="javascript: void(0);">Contacts</a></li>
-                                            <li class="breadcrumb-item active">User List</li> -->
+                                            <li class="breadcrumb-item"><router-link  to="/"  >Dashboard</router-link></li>
+                                            <li class="breadcrumb-item" v-for="item in previous" :key="item.id" >
+                                                <router-link :to="item.link">{{item.name}}</router-link>
+                                            </li>
+                                             <li class="breadcrumb-item active">{{active_name}}</li>
                                         </ol>
                                     </div>
 
@@ -23,7 +25,7 @@
 
 <script>
 export default {
-props:['active_name'],
+props:['active_name','previous'],
   beforeRouteEnter(to, from, next) {
         next(vm => {
             vm.prevRoute = from;

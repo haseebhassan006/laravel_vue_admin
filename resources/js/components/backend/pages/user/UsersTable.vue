@@ -74,7 +74,7 @@
                                                             <a href="#" class="text-body">Phyllis Gatlin</a>
                                                         </td>
                                                         <td>UI/UX Designer</td>
-                                                        <td>phyllisgatlin@Dason.com</td>
+                                                        <td>phyllisgatlin@example.com</td>
                                                         <td>
                                                             <div class="d-flex gap-2">
                                                                 <a href="#" class="badge badge-soft-primary">Photoshop</a>
@@ -106,7 +106,7 @@
                                                             <a href="#" class="text-body">James Nix</a>
                                                         </td>
                                                         <td>Frontend Developer</td>
-                                                        <td>jamesnix@Dason.com</td>
+                                                        <td>jamesnix@example.com</td>
                                                         <td>
                                                             <div class="d-flex gap-2">
                                                                 <a href="#" class="badge badge-soft-primary font-size-11">Html</a>
@@ -139,7 +139,7 @@
                                                             <a href="#" class="text-body">Darlene Smith</a>
                                                         </td>
                                                         <td>Backend Developer</td>
-                                                        <td>darlenesmith@Dason.com</td>
+                                                        <td>darlenesmith@example.com</td>
                                                         <td>
                                                             <div class="d-flex gap-2">
                                                                 <a href="#" class="badge badge-soft-primary font-size-11">Php</a>
@@ -176,7 +176,7 @@
                                                             <a href="#" class="text-body">William Swift</a>
                                                         </td>
                                                         <td>Full Stack Developer</td>
-                                                        <td>williamswift@Dason.com</td>
+                                                        <td>williamswift@example.com</td>
                                                         <td>
                                                             <div class="d-flex gap-2">
                                                                 <a href="#" class="badge badge-soft-primary font-size-11">Ruby</a>
@@ -213,7 +213,7 @@
                                                             <a href="#" class="text-body">Kevin West</a>
                                                         </td>
                                                         <td>Frontend Developer</td>
-                                                        <td>kevinwest@Dason.com</td>
+                                                        <td>kevinwest@example.com</td>
                                                         <td>
                                                             <div class="d-flex gap-2">
                                                                 <a href="#" class="badge badge-soft-primary font-size-11">Html</a>
@@ -246,7 +246,7 @@
                                                             <a href="#" class="text-body">Tommy Hayes</a>
                                                         </td>
                                                         <td>UI/UX Designer</td>
-                                                        <td>tommyhayes@Dason.com</td>
+                                                        <td>tommyhayes@example.com</td>
                                                         <td>
                                                             <div class="d-flex gap-2">
                                                                 <a href="#" class="badge badge-soft-primary font-size-11">Photoshop</a>
@@ -278,7 +278,7 @@
                                                             <a href="#" class="text-body">Diana Owens</a>
                                                         </td>
                                                         <td>Graphic Designer</td>
-                                                        <td>dianaowens@Dason.com</td>
+                                                        <td>dianaowens@example.com</td>
                                                         <td>
                                                             <div class="d-flex gap-2">
                                                                 <a href="#" class="badge badge-soft-primary font-size-11">Photoshop</a>
@@ -310,7 +310,7 @@
                                                             <a href="#" class="text-body">Paul Sanchez</a>
                                                         </td>
                                                         <td>Angular Developer</td>
-                                                        <td>paulsanchez@Dason.com</td>
+                                                        <td>paulsanchez@example.com</td>
                                                         <td>
                                                             <div class="d-flex gap-2">
                                                                 <a href="#" class="badge badge-soft-primary font-size-11">Php</a>
@@ -342,7 +342,7 @@
                                                             <a href="#" class="text-body">Peter Dryer</a>
                                                         </td>
                                                         <td>Web Designer</td>
-                                                        <td>peterdryer@Dason.com</td>
+                                                        <td>peterdryer@example.com</td>
                                                         <td>
                                                             <div class="d-flex gap-2">
                                                                 <a href="#" class="badge badge-soft-primary font-size-11">Html</a>
@@ -375,7 +375,7 @@
                                                             <a href="#" class="text-body">Gerald Moyer</a>
                                                         </td>
                                                         <td>Backend Developer</td>
-                                                        <td>geraldmoyer@Dason.com</td>
+                                                        <td>geraldmoyer@example.com</td>
                                                         <td>
                                                             <div class="d-flex gap-2">
                                                                 <a href="#" class="badge badge-soft-primary font-size-11">Php</a>
@@ -407,7 +407,7 @@
                                                             <a href="#" class="text-body">Gail McGuire</a>
                                                         </td>
                                                         <td>Backend Developer</td>
-                                                        <td>gailmcGuire@Dason.com</td>
+                                                        <td>gailmcGuire@example.com</td>
                                                         <td>
                                                             <div class="d-flex gap-2">
                                                                 <a href="#" class="badge badge-soft-primary font-size-11">Php</a>

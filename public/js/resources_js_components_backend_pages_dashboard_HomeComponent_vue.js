@@ -41,12 +41,12 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = ({
   methods: {
     loadMiniChart: function loadMiniChart() {
-      var barchartColors = getChartColorsArray("#mini-chart1");
+      var barchartColors = getChartColorsArray("#mini-chart");
       var options = {
-        series: [60, 40],
+        series: [60, 50],
         chart: {
           type: "donut",
-          height: 110
+          height: 115
         },
         colors: barchartColors,
         legend: {
@@ -56,11 +56,12 @@ __webpack_require__.r(__webpack_exports__);
           enabled: false
         }
       };
-      var chart = new ApexCharts(document.querySelector("#mini-chart1"), options);
+      var chart = new ApexCharts(document.querySelector("#mini-chart"), options);
       chart.render();
     }
   },
   mounted: function mounted() {
+    this.loadMiniChart();
     console.log('Component mounted.');
   }
 });
@@ -1247,7 +1248,7 @@ var staticRenderFns = [
               _c("div", {
                 staticClass: "apex-charts",
                 attrs: {
-                  id: "mini-chart1",
+                  id: "mini-chart",
                   "data-colors": '["#6951ce", "#f04d80"]'
                 }
               })

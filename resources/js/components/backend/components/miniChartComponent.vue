@@ -16,7 +16,7 @@
                                             </div>
 
                                             <div class="flex-shrink-0 text-end dash-widget">
-                                                <div id="mini-chart1" data-colors='["#6951ce", "#f04d80"]' class="apex-charts"></div>
+                                                <div id="mini-chart" data-colors='["#6951ce", "#f04d80"]' class="apex-charts"></div>
                                             </div>
                                         </div>
                                     </div><!-- end card body -->
@@ -29,26 +29,27 @@
     export default {
         methods: {
             loadMiniChart(){
-                       var barchartColors = getChartColorsArray("#mini-chart1");
-var options = {
- series : [60, 40],
- chart : {
-   type : "donut",
-   height : 110
- },
- colors : barchartColors,
- legend : {
-   show : false
- },
- dataLabels : {
-   enabled : false
- }
-};
-var chart = new ApexCharts(document.querySelector("#mini-chart1"), options);
-chart.render();
+                    let barchartColors = getChartColorsArray("#mini-chart");
+                    let options = {
+                    series : [60, 50],
+                    chart : {
+                    type : "donut",
+                    height : 115
+                    },
+                    colors : barchartColors,
+                    legend : {
+                    show : false
+                    },
+                    dataLabels : {
+                    enabled : false
+                    }
+                    };
+                    let chart = new ApexCharts(document.querySelector("#mini-chart"), options);
+                    chart.render();
             }
         },
         mounted() {
+            this.loadMiniChart();
             console.log('Component mounted.')
         }
     }

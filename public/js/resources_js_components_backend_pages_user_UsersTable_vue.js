@@ -754,7 +754,7 @@ var staticRenderFns = [
               _vm._v(" "),
               _c("td", [_vm._v("UI/UX Designer")]),
               _vm._v(" "),
-              _c("td", [_vm._v("phyllisgatlin@Dason.com")]),
+              _c("td", [_vm._v("phyllisgatlin@example.com")]),
               _vm._v(" "),
               _c("td", [
                 _c("div", { staticClass: "d-flex gap-2" }, [
@@ -851,7 +851,7 @@ var staticRenderFns = [
               _vm._v(" "),
               _c("td", [_vm._v("Frontend Developer")]),
               _vm._v(" "),
-              _c("td", [_vm._v("jamesnix@Dason.com")]),
+              _c("td", [_vm._v("jamesnix@example.com")]),
               _vm._v(" "),
               _c("td", [
                 _c("div", { staticClass: "d-flex gap-2" }, [
@@ -957,7 +957,7 @@ var staticRenderFns = [
               _vm._v(" "),
               _c("td", [_vm._v("Backend Developer")]),
               _vm._v(" "),
-              _c("td", [_vm._v("darlenesmith@Dason.com")]),
+              _c("td", [_vm._v("darlenesmith@example.com")]),
               _vm._v(" "),
               _c("td", [
                 _c("div", { staticClass: "d-flex gap-2" }, [
@@ -1073,7 +1073,7 @@ var staticRenderFns = [
               _vm._v(" "),
               _c("td", [_vm._v("Full Stack Developer")]),
               _vm._v(" "),
-              _c("td", [_vm._v("williamswift@Dason.com")]),
+              _c("td", [_vm._v("williamswift@example.com")]),
               _vm._v(" "),
               _c("td", [
                 _c("div", { staticClass: "d-flex gap-2" }, [
@@ -1189,7 +1189,7 @@ var staticRenderFns = [
               _vm._v(" "),
               _c("td", [_vm._v("Frontend Developer")]),
               _vm._v(" "),
-              _c("td", [_vm._v("kevinwest@Dason.com")]),
+              _c("td", [_vm._v("kevinwest@example.com")]),
               _vm._v(" "),
               _c("td", [
                 _c("div", { staticClass: "d-flex gap-2" }, [
@@ -1295,7 +1295,7 @@ var staticRenderFns = [
               _vm._v(" "),
               _c("td", [_vm._v("UI/UX Designer")]),
               _vm._v(" "),
-              _c("td", [_vm._v("tommyhayes@Dason.com")]),
+              _c("td", [_vm._v("tommyhayes@example.com")]),
               _vm._v(" "),
               _c("td", [
                 _c("div", { staticClass: "d-flex gap-2" }, [
@@ -1392,7 +1392,7 @@ var staticRenderFns = [
               _vm._v(" "),
               _c("td", [_vm._v("Graphic Designer")]),
               _vm._v(" "),
-              _c("td", [_vm._v("dianaowens@Dason.com")]),
+              _c("td", [_vm._v("dianaowens@example.com")]),
               _vm._v(" "),
               _c("td", [
                 _c("div", { staticClass: "d-flex gap-2" }, [
@@ -1489,7 +1489,7 @@ var staticRenderFns = [
               _vm._v(" "),
               _c("td", [_vm._v("Angular Developer")]),
               _vm._v(" "),
-              _c("td", [_vm._v("paulsanchez@Dason.com")]),
+              _c("td", [_vm._v("paulsanchez@example.com")]),
               _vm._v(" "),
               _c("td", [
                 _c("div", { staticClass: "d-flex gap-2" }, [
@@ -1586,7 +1586,7 @@ var staticRenderFns = [
               _vm._v(" "),
               _c("td", [_vm._v("Web Designer")]),
               _vm._v(" "),
-              _c("td", [_vm._v("peterdryer@Dason.com")]),
+              _c("td", [_vm._v("peterdryer@example.com")]),
               _vm._v(" "),
               _c("td", [
                 _c("div", { staticClass: "d-flex gap-2" }, [
@@ -1692,7 +1692,7 @@ var staticRenderFns = [
               _vm._v(" "),
               _c("td", [_vm._v("Backend Developer")]),
               _vm._v(" "),
-              _c("td", [_vm._v("geraldmoyer@Dason.com")]),
+              _c("td", [_vm._v("geraldmoyer@example.com")]),
               _vm._v(" "),
               _c("td", [
                 _c("div", { staticClass: "d-flex gap-2" }, [
@@ -1789,7 +1789,7 @@ var staticRenderFns = [
               _vm._v(" "),
               _c("td", [_vm._v("Backend Developer")]),
               _vm._v(" "),
-              _c("td", [_vm._v("gailmcGuire@Dason.com")]),
+              _c("td", [_vm._v("gailmcGuire@example.com")]),
               _vm._v(" "),
               _c("td", [
                 _c("div", { staticClass: "d-flex gap-2" }, [

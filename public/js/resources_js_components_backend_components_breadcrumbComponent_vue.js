@@ -34,8 +34,10 @@ __webpack_require__.r(__webpack_exports__);
 //
 //
 //
+//
+//
 /* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = ({
-  props: ['active_name'],
+  props: ['active_name', 'previous'],
   beforeRouteEnter: function beforeRouteEnter(to, from, next) {
     next(function (vm) {
       vm.prevRoute = from;
@@ -153,11 +155,35 @@ var render = function() {
                 "ol",
                 { staticClass: "breadcrumb m-0" },
                 [
-                  _c("router-link", { attrs: { to: _vm.prevRoutePath } }, [
-                    _vm._v("Previous Page")
+                  _c(
+                    "li",
+                    { staticClass: "breadcrumb-item" },
+                    [
+                      _c("router-link", { attrs: { to: "/" } }, [
+                        _vm._v("Dashboard")
+                      ])
+                    ],
+                    1
+                  ),
+                  _vm._v(" "),
+                  _vm._l(_vm.previous, function(item) {
+                    return _c(
+                      "li",
+                      { key: item.id, staticClass: "breadcrumb-item" },
+                      [
+                        _c("router-link", { attrs: { to: item.link } }, [
+                          _vm._v(_vm._s(item.name))
+                        ])
+                      ],
+                      1
+                    )
+                  }),
+                  _vm._v(" "),
+                  _c("li", { staticClass: "breadcrumb-item active" }, [
+                    _vm._v(_vm._s(_vm.active_name))
                   ])
                 ],
-                1
+                2
               )
             ])
           ]
