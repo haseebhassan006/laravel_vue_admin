@@ -36,4 +36,4 @@ Route::get('auth/facebook/callback', [FacebookController::class, 'loginWithFaceb
 Route::get('auth/google', [GoogleController::class, 'redirectToGoogle'])->name('login.gmail');
 
 Route::get('auth/google/callback', [GoogleController::class, 'handleGoogleCallback'])->name('callback.gmail');
-Route::get('privacy-policy',[FrontendController::class, 'privacyPolicy']);
+Route::get('privacy-policy', [FrontendController::class, 'privacyPolicy']);
