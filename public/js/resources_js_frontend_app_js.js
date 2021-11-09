@@ -63,6 +63,104 @@ __webpack_require__.r(__webpack_exports__);
 
 /***/ }),
 
+/***/ "./node_modules/babel-loader/lib/index.js??clonedRuleSet-5[0].rules[0].use[0]!./node_modules/vue-loader/lib/index.js??vue-loader-options!./resources/js/components/backend/components/charts/epieChartComponent.vue?vue&type=script&lang=js&":
+/*!***************************************************************************************************************************************************************************************************************************************************!*\
+  !*** ./node_modules/babel-loader/lib/index.js??clonedRuleSet-5[0].rules[0].use[0]!./node_modules/vue-loader/lib/index.js??vue-loader-options!./resources/js/components/backend/components/charts/epieChartComponent.vue?vue&type=script&lang=js& ***!
+  \***************************************************************************************************************************************************************************************************************************************************/
+/***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony export */ __webpack_require__.d(__webpack_exports__, {
+/* harmony export */   "default": () => (__WEBPACK_DEFAULT_EXPORT__)
+/* harmony export */ });
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+props: ['title', 'datalabel', 'data', 'label', 'index'];
+
+/* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = ({
+  data: function data() {
+    return {
+      option: null
+    };
+  },
+  methods: {
+    loadPieChart: function loadPieChart() {
+      var pieColors = getChartColorsArray("#pie-chart");
+      dom = document.getElementById("pie-chart");
+      myChart = echarts.init(dom);
+      app = {};
+      this.option = null, this.option = {
+        tooltip: {
+          trigger: "item",
+          formatter: "{a} <br/>{b} : {c} ({d}%)"
+        },
+        legend: {
+          orient: "vertical",
+          left: "left",
+          data: this.datalabel,
+          textStyle: {
+            color: "#858d98"
+          }
+        },
+        color: pieColors,
+        series: [{
+          name: 'Total ' + this.label,
+          type: "pie",
+          radius: "55%",
+          center: ["50%", "60%"],
+          data: this.data,
+          itemStyle: {
+            emphasis: {
+              shadowBlur: 10,
+              shadowOffsetX: 0,
+              shadowColor: "rgba(0, 0, 0, 0.5)"
+            }
+          }
+        }]
+      }, this.option && "object" == (typeof this.option === "undefined" ? "undefined" : _typeof(this.option)) && myChart.setOption(this.option, true);
+    }
+  },
+  mounted: function mounted() {
+    this.loadPieChart();
+    console.log('Component mounted.Pie');
+  } // mounted(){
+  // this.loadPieChart();
+  // }
+  // [{data array sample
+  //         value: 335,
+  //         name: "Laptop"
+  //     }, {
+  //         value: 310,
+  //         name: "Tablet"
+  //     }, {
+  //         value: 234,
+  //         name: "Mobile"
+  //     }, {
+  //         value: 135,
+  //         name: "Others"
+  //     }, {
+  //         value: 1548,
+  //         name: "Desktop"
+  //     }]
+
+});
+
+/***/ }),
+
 /***/ "./node_modules/babel-loader/lib/index.js??clonedRuleSet-5[0].rules[0].use[0]!./node_modules/vue-loader/lib/index.js??vue-loader-options!./resources/js/components/backend/components/miniChartComponent.vue?vue&type=script&lang=js&":
 /*!********************************************************************************************************************************************************************************************************************************************!*\
   !*** ./node_modules/babel-loader/lib/index.js??clonedRuleSet-5[0].rules[0].use[0]!./node_modules/vue-loader/lib/index.js??vue-loader-options!./resources/js/components/backend/components/miniChartComponent.vue?vue&type=script&lang=js& ***!
@@ -99,14 +197,13 @@ __webpack_require__.r(__webpack_exports__);
 //
 //
 //
-//
-//
 /* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = ({
+  props: ['title', 'index'],
   methods: {
     loadMiniChart: function loadMiniChart() {
-      var barchartColors = getChartColorsArray("#mini-chart");
+      var barchartColors = getChartColorsArray("#mini-chart" + this.index);
       var options = {
-        series: [60, 50],
+        series: [60, 40],
         chart: {
           type: "donut",
           height: 115
@@ -119,7 +216,7 @@ __webpack_require__.r(__webpack_exports__);
           enabled: false
         }
       };
-      var chart = new ApexCharts(document.querySelector("#mini-chart"), options);
+      var chart = new ApexCharts(document.querySelector("#mini-chart" + this.index), options);
       chart.render();
     }
   },
@@ -143,66 +240,7 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony export */   "default": () => (__WEBPACK_DEFAULT_EXPORT__)
 /* harmony export */ });
 /* harmony import */ var _components_miniChartComponent__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ../../components/miniChartComponent */ "./resources/js/components/backend/components/miniChartComponent.vue");
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
+/* harmony import */ var _components_charts_epieChartComponent__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ../../components/charts/epieChartComponent */ "./resources/js/components/backend/components/charts/epieChartComponent.vue");
 //
 //
 //
@@ -1086,9 +1124,11 @@ __webpack_require__.r(__webpack_exports__);
 //
 //
 
+
 /* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = ({
   components: {
-    minichart: _components_miniChartComponent__WEBPACK_IMPORTED_MODULE_0__["default"]
+    minichart: _components_miniChartComponent__WEBPACK_IMPORTED_MODULE_0__["default"],
+    epieChart: _components_charts_epieChartComponent__WEBPACK_IMPORTED_MODULE_1__["default"]
   },
   data: function data() {
     return {
@@ -2661,6 +2701,45 @@ component.options.__file = "resources/js/components/backend/components/breadcrum
 
 /***/ }),
 
+/***/ "./resources/js/components/backend/components/charts/epieChartComponent.vue":
+/*!**********************************************************************************!*\
+  !*** ./resources/js/components/backend/components/charts/epieChartComponent.vue ***!
+  \**********************************************************************************/
+/***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony export */ __webpack_require__.d(__webpack_exports__, {
+/* harmony export */   "default": () => (__WEBPACK_DEFAULT_EXPORT__)
+/* harmony export */ });
+/* harmony import */ var _epieChartComponent_vue_vue_type_template_id_15320d4d___WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ./epieChartComponent.vue?vue&type=template&id=15320d4d& */ "./resources/js/components/backend/components/charts/epieChartComponent.vue?vue&type=template&id=15320d4d&");
+/* harmony import */ var _epieChartComponent_vue_vue_type_script_lang_js___WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ./epieChartComponent.vue?vue&type=script&lang=js& */ "./resources/js/components/backend/components/charts/epieChartComponent.vue?vue&type=script&lang=js&");
+/* harmony import */ var _node_modules_vue_loader_lib_runtime_componentNormalizer_js__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! !../../../../../../node_modules/vue-loader/lib/runtime/componentNormalizer.js */ "./node_modules/vue-loader/lib/runtime/componentNormalizer.js");
+
+
+
+
+
+/* normalize component */
+;
+var component = (0,_node_modules_vue_loader_lib_runtime_componentNormalizer_js__WEBPACK_IMPORTED_MODULE_2__["default"])(
+  _epieChartComponent_vue_vue_type_script_lang_js___WEBPACK_IMPORTED_MODULE_1__["default"],
+  _epieChartComponent_vue_vue_type_template_id_15320d4d___WEBPACK_IMPORTED_MODULE_0__.render,
+  _epieChartComponent_vue_vue_type_template_id_15320d4d___WEBPACK_IMPORTED_MODULE_0__.staticRenderFns,
+  false,
+  null,
+  null,
+  null
+  
+)
+
+/* hot reload */
+if (false) { var api; }
+component.options.__file = "resources/js/components/backend/components/charts/epieChartComponent.vue"
+/* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = (component.exports);
+
+/***/ }),
+
 /***/ "./resources/js/components/backend/components/miniChartComponent.vue":
 /*!***************************************************************************!*\
   !*** ./resources/js/components/backend/components/miniChartComponent.vue ***!
@@ -2950,6 +3029,22 @@ __webpack_require__.r(__webpack_exports__);
 
 /***/ }),
 
+/***/ "./resources/js/components/backend/components/charts/epieChartComponent.vue?vue&type=script&lang=js&":
+/*!***********************************************************************************************************!*\
+  !*** ./resources/js/components/backend/components/charts/epieChartComponent.vue?vue&type=script&lang=js& ***!
+  \***********************************************************************************************************/
+/***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony export */ __webpack_require__.d(__webpack_exports__, {
+/* harmony export */   "default": () => (__WEBPACK_DEFAULT_EXPORT__)
+/* harmony export */ });
+/* harmony import */ var _node_modules_babel_loader_lib_index_js_clonedRuleSet_5_0_rules_0_use_0_node_modules_vue_loader_lib_index_js_vue_loader_options_epieChartComponent_vue_vue_type_script_lang_js___WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! -!../../../../../../node_modules/babel-loader/lib/index.js??clonedRuleSet-5[0].rules[0].use[0]!../../../../../../node_modules/vue-loader/lib/index.js??vue-loader-options!./epieChartComponent.vue?vue&type=script&lang=js& */ "./node_modules/babel-loader/lib/index.js??clonedRuleSet-5[0].rules[0].use[0]!./node_modules/vue-loader/lib/index.js??vue-loader-options!./resources/js/components/backend/components/charts/epieChartComponent.vue?vue&type=script&lang=js&");
+ /* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = (_node_modules_babel_loader_lib_index_js_clonedRuleSet_5_0_rules_0_use_0_node_modules_vue_loader_lib_index_js_vue_loader_options_epieChartComponent_vue_vue_type_script_lang_js___WEBPACK_IMPORTED_MODULE_0__["default"]); 
+
+/***/ }),
+
 /***/ "./resources/js/components/backend/components/miniChartComponent.vue?vue&type=script&lang=js&":
 /*!****************************************************************************************************!*\
   !*** ./resources/js/components/backend/components/miniChartComponent.vue?vue&type=script&lang=js& ***!
@@ -3075,6 +3170,23 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony export */   "staticRenderFns": () => (/* reexport safe */ _node_modules_vue_loader_lib_loaders_templateLoader_js_vue_loader_options_node_modules_vue_loader_lib_index_js_vue_loader_options_breadcrumbComponent_vue_vue_type_template_id_1c485aa7___WEBPACK_IMPORTED_MODULE_0__.staticRenderFns)
 /* harmony export */ });
 /* harmony import */ var _node_modules_vue_loader_lib_loaders_templateLoader_js_vue_loader_options_node_modules_vue_loader_lib_index_js_vue_loader_options_breadcrumbComponent_vue_vue_type_template_id_1c485aa7___WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! -!../../../../../node_modules/vue-loader/lib/loaders/templateLoader.js??vue-loader-options!../../../../../node_modules/vue-loader/lib/index.js??vue-loader-options!./breadcrumbComponent.vue?vue&type=template&id=1c485aa7& */ "./node_modules/vue-loader/lib/loaders/templateLoader.js??vue-loader-options!./node_modules/vue-loader/lib/index.js??vue-loader-options!./resources/js/components/backend/components/breadcrumbComponent.vue?vue&type=template&id=1c485aa7&");
+
+
+/***/ }),
+
+/***/ "./resources/js/components/backend/components/charts/epieChartComponent.vue?vue&type=template&id=15320d4d&":
+/*!*****************************************************************************************************************!*\
+  !*** ./resources/js/components/backend/components/charts/epieChartComponent.vue?vue&type=template&id=15320d4d& ***!
+  \*****************************************************************************************************************/
+/***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony export */ __webpack_require__.d(__webpack_exports__, {
+/* harmony export */   "render": () => (/* reexport safe */ _node_modules_vue_loader_lib_loaders_templateLoader_js_vue_loader_options_node_modules_vue_loader_lib_index_js_vue_loader_options_epieChartComponent_vue_vue_type_template_id_15320d4d___WEBPACK_IMPORTED_MODULE_0__.render),
+/* harmony export */   "staticRenderFns": () => (/* reexport safe */ _node_modules_vue_loader_lib_loaders_templateLoader_js_vue_loader_options_node_modules_vue_loader_lib_index_js_vue_loader_options_epieChartComponent_vue_vue_type_template_id_15320d4d___WEBPACK_IMPORTED_MODULE_0__.staticRenderFns)
+/* harmony export */ });
+/* harmony import */ var _node_modules_vue_loader_lib_loaders_templateLoader_js_vue_loader_options_node_modules_vue_loader_lib_index_js_vue_loader_options_epieChartComponent_vue_vue_type_template_id_15320d4d___WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! -!../../../../../../node_modules/vue-loader/lib/loaders/templateLoader.js??vue-loader-options!../../../../../../node_modules/vue-loader/lib/index.js??vue-loader-options!./epieChartComponent.vue?vue&type=template&id=15320d4d& */ "./node_modules/vue-loader/lib/loaders/templateLoader.js??vue-loader-options!./node_modules/vue-loader/lib/index.js??vue-loader-options!./resources/js/components/backend/components/charts/epieChartComponent.vue?vue&type=template&id=15320d4d&");
 
 
 /***/ }),
@@ -3277,6 +3389,50 @@ render._withStripped = true
 
 /***/ }),
 
+/***/ "./node_modules/vue-loader/lib/loaders/templateLoader.js??vue-loader-options!./node_modules/vue-loader/lib/index.js??vue-loader-options!./resources/js/components/backend/components/charts/epieChartComponent.vue?vue&type=template&id=15320d4d&":
+/*!********************************************************************************************************************************************************************************************************************************************************!*\
+  !*** ./node_modules/vue-loader/lib/loaders/templateLoader.js??vue-loader-options!./node_modules/vue-loader/lib/index.js??vue-loader-options!./resources/js/components/backend/components/charts/epieChartComponent.vue?vue&type=template&id=15320d4d& ***!
+  \********************************************************************************************************************************************************************************************************************************************************/
+/***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony export */ __webpack_require__.d(__webpack_exports__, {
+/* harmony export */   "render": () => (/* binding */ render),
+/* harmony export */   "staticRenderFns": () => (/* binding */ staticRenderFns)
+/* harmony export */ });
+var render = function() {
+  var _vm = this
+  var _h = _vm.$createElement
+  var _c = _vm._self._c || _h
+  return _c("div", [
+    _c("div", { staticClass: "card" }, [
+      _c("div", { staticClass: "card-header" }, [
+        _c("h4", { staticClass: "card-title mb-0" }, [
+          _vm._v(" " + _vm._s(_vm.title) + " Chart")
+        ])
+      ]),
+      _vm._v(" "),
+      _c("div", { staticClass: "card-body" }, [
+        _c("div", {
+          staticClass: "e-charts",
+          attrs: {
+            id: "pie-chart" + _vm.index,
+            "data-colors":
+              '["#34c38f", "#f04d80", "#16daf1", "#ffcc5a", "#6951ce"]'
+          }
+        })
+      ])
+    ])
+  ])
+}
+var staticRenderFns = []
+render._withStripped = true
+
+
+
+/***/ }),
+
 /***/ "./node_modules/vue-loader/lib/loaders/templateLoader.js??vue-loader-options!./node_modules/vue-loader/lib/index.js??vue-loader-options!./resources/js/components/backend/components/miniChartComponent.vue?vue&type=template&id=08c74f19&":
 /*!*************************************************************************************************************************************************************************************************************************************************!*\
   !*** ./node_modules/vue-loader/lib/loaders/templateLoader.js??vue-loader-options!./node_modules/vue-loader/lib/index.js??vue-loader-options!./resources/js/components/backend/components/miniChartComponent.vue?vue&type=template&id=08c74f19& ***!
@@ -3293,63 +3449,60 @@ var render = function() {
   var _vm = this
   var _h = _vm.$createElement
   var _c = _vm._self._c || _h
-  return _vm._m(0)
+  return _c("div", { staticClass: "card card-h-100" }, [
+    _c("div", { staticClass: "card-body" }, [
+      _c("div", { staticClass: "d-flex align-items-center" }, [
+        _c("div", { staticClass: "flex-grow-1" }, [
+          _c(
+            "span",
+            { staticClass: "text-muted mb-3 lh-1 d-block text-truncate" },
+            [_vm._v("Total " + _vm._s(_vm.title))]
+          ),
+          _vm._v(" "),
+          _vm._m(0),
+          _vm._v(" "),
+          _vm._m(1)
+        ]),
+        _vm._v(" "),
+        _c("div", { staticClass: "flex-shrink-0 text-end dash-widget" }, [
+          _c("div", {
+            staticClass: "apex-charts",
+            attrs: {
+              id: "mini-chart" + _vm.index,
+              "data-colors": '["#6951ce", "#f04d80"]'
+            }
+          })
+        ])
+      ])
+    ])
+  ])
 }
 var staticRenderFns = [
   function() {
     var _vm = this
     var _h = _vm.$createElement
     var _c = _vm._self._c || _h
-    return _c("div", [
-      _c("div", { staticClass: "card card-h-100" }, [
-        _c("div", { staticClass: "card-body" }, [
-          _c("div", { staticClass: "d-flex align-items-center" }, [
-            _c("div", { staticClass: "flex-grow-1" }, [
-              _c(
-                "span",
-                { staticClass: "text-muted mb-3 lh-1 d-block text-truncate" },
-                [_vm._v("Total Sales")]
-              ),
-              _vm._v(" "),
-              _c("h4", { staticClass: "mb-3" }, [
-                _vm._v(
-                  "\n                                                    $"
-                ),
-                _c(
-                  "span",
-                  {
-                    staticClass: "counter-value",
-                    attrs: { "data-target": "354.5" }
-                  },
-                  [_vm._v("0")]
-                ),
-                _vm._v("k\n                                                ")
-              ]),
-              _vm._v(" "),
-              _c("div", { staticClass: "text-nowrap" }, [
-                _c(
-                  "span",
-                  { staticClass: "badge bg-soft-warning text-warning" },
-                  [_vm._v("+$20.9k")]
-                ),
-                _vm._v(" "),
-                _c("span", { staticClass: "ms-1 text-muted font-size-13" }, [
-                  _vm._v("Since last week")
-                ])
-              ])
-            ]),
-            _vm._v(" "),
-            _c("div", { staticClass: "flex-shrink-0 text-end dash-widget" }, [
-              _c("div", {
-                staticClass: "apex-charts",
-                attrs: {
-                  id: "mini-chart",
-                  "data-colors": '["#6951ce", "#f04d80"]'
-                }
-              })
-            ])
-          ])
-        ])
+    return _c("h4", { staticClass: "mb-3" }, [
+      _vm._v("\n               $"),
+      _c(
+        "span",
+        { staticClass: "counter-value", attrs: { "data-target": "354.5" } },
+        [_vm._v("0")]
+      ),
+      _vm._v("k\n            ")
+    ])
+  },
+  function() {
+    var _vm = this
+    var _h = _vm.$createElement
+    var _c = _vm._self._c || _h
+    return _c("div", { staticClass: "text-nowrap" }, [
+      _c("span", { staticClass: "badge bg-soft-warning text-warning" }, [
+        _vm._v("+$20.9k")
+      ]),
+      _vm._v(" "),
+      _c("span", { staticClass: "ms-1 text-muted font-size-13" }, [
+        _vm._v("Since last week")
       ])
     ])
   }
@@ -3380,18 +3533,42 @@ var render = function() {
     _vm._m(0),
     _vm._v(" "),
     _c("div", { staticClass: "row" }, [
-      _c("div", { staticClass: "col-xl-3 col-md-6" }, [_c("minichart")], 1),
+      _c(
+        "div",
+        { staticClass: "col-xl-3 col-md-6" },
+        [_c("minichart", { attrs: { title: "Demoe", index: 1 } })],
+        1
+      ),
       _vm._v(" "),
-      _vm._m(1),
+      _c(
+        "div",
+        { staticClass: "col-xl-3 col-md-6" },
+        [_c("minichart", { attrs: { title: "Test", index: 2 } })],
+        1
+      ),
       _vm._v(" "),
-      _vm._m(2),
+      _c(
+        "div",
+        { staticClass: "col-xl-3 col-md-6" },
+        [_c("minichart", { attrs: { title: "Test", index: 3 } })],
+        1
+      ),
       _vm._v(" "),
-      _vm._m(3)
+      _c(
+        "div",
+        { staticClass: "col-xl-3 col-md-6" },
+        [_c("minichart", { attrs: { title: "Test", index: 4 } })],
+        1
+      )
     ]),
     _vm._v(" "),
-    _vm._m(4),
+    _c("div", { staticClass: "row" }, [
+      _c("div", { staticClass: "col-md-6" }, [_c("epieChart")], 1)
+    ]),
     _vm._v(" "),
-    _vm._m(5)
+    _vm._m(1),
+    _vm._v(" "),
+    _vm._m(2)
   ])
 }
 var staticRenderFns = [
@@ -3427,168 +3604,6 @@ var staticRenderFns = [
             ])
           ]
         )
-      ])
-    ])
-  },
-  function() {
-    var _vm = this
-    var _h = _vm.$createElement
-    var _c = _vm._self._c || _h
-    return _c("div", { staticClass: "col-xl-3 col-md-6" }, [
-      _c("div", { staticClass: "card card-h-100" }, [
-        _c("div", { staticClass: "card-body" }, [
-          _c("div", { staticClass: "d-flex align-items-center" }, [
-            _c("div", { staticClass: "flex-grow-1" }, [
-              _c(
-                "span",
-                { staticClass: "text-muted mb-3 lh-1 d-block text-truncate" },
-                [_vm._v("Total Items")]
-              ),
-              _vm._v(" "),
-              _c("h4", { staticClass: "mb-3" }, [
-                _c(
-                  "span",
-                  {
-                    staticClass: "counter-value",
-                    attrs: { "data-target": "1256" }
-                  },
-                  [_vm._v("0")]
-                )
-              ]),
-              _vm._v(" "),
-              _c("div", { staticClass: "text-nowrap" }, [
-                _c(
-                  "span",
-                  { staticClass: "badge bg-soft-danger text-danger" },
-                  [_vm._v("-29 Trades")]
-                ),
-                _vm._v(" "),
-                _c("span", { staticClass: "ms-1 text-muted font-size-13" }, [
-                  _vm._v("Since last week")
-                ])
-              ])
-            ]),
-            _vm._v(" "),
-            _c("div", { staticClass: "flex-shrink-0 text-end dash-widget" }, [
-              _c("div", {
-                staticClass: "apex-charts",
-                attrs: {
-                  id: "mini-chart2",
-                  "data-colors": '["#6951ce", "#f04d80"]'
-                }
-              })
-            ])
-          ])
-        ])
-      ])
-    ])
-  },
-  function() {
-    var _vm = this
-    var _h = _vm.$createElement
-    var _c = _vm._self._c || _h
-    return _c("div", { staticClass: "col-xl-3 col-md-6" }, [
-      _c("div", { staticClass: "card card-h-100" }, [
-        _c("div", { staticClass: "card-body" }, [
-          _c("div", { staticClass: "d-flex align-items-center" }, [
-            _c("div", { staticClass: "flex-grow-1" }, [
-              _c(
-                "span",
-                { staticClass: "text-muted mb-3 lh-1 d-block text-truncate" },
-                [_vm._v("Average Sales")]
-              ),
-              _vm._v(" "),
-              _c("h4", { staticClass: "mb-3" }, [
-                _vm._v("\n                                $"),
-                _c(
-                  "span",
-                  {
-                    staticClass: "counter-value",
-                    attrs: { "data-target": "7.54" }
-                  },
-                  [_vm._v("0")]
-                ),
-                _vm._v("M\n                            ")
-              ]),
-              _vm._v(" "),
-              _c("div", { staticClass: "text-nowrap" }, [
-                _c(
-                  "span",
-                  { staticClass: "badge bg-soft-warning text-warning" },
-                  [_vm._v("+ $2.8k")]
-                ),
-                _vm._v(" "),
-                _c("span", { staticClass: "ms-1 text-muted font-size-13" }, [
-                  _vm._v("Since last week")
-                ])
-              ])
-            ]),
-            _vm._v(" "),
-            _c("div", { staticClass: "flex-shrink-0 text-end dash-widget" }, [
-              _c("div", {
-                staticClass: "apex-charts",
-                attrs: {
-                  id: "mini-chart3",
-                  "data-colors": '["#6951ce", "#f04d80"]'
-                }
-              })
-            ])
-          ])
-        ])
-      ])
-    ])
-  },
-  function() {
-    var _vm = this
-    var _h = _vm.$createElement
-    var _c = _vm._self._c || _h
-    return _c("div", { staticClass: "col-xl-3 col-md-6" }, [
-      _c("div", { staticClass: "card card-h-100" }, [
-        _c("div", { staticClass: "card-body" }, [
-          _c("div", { staticClass: "d-flex align-items-center" }, [
-            _c("div", { staticClass: "flex-grow-1" }, [
-              _c(
-                "span",
-                { staticClass: "text-muted mb-3 lh-1 d-block text-truncate" },
-                [_vm._v("Order Delivery")]
-              ),
-              _vm._v(" "),
-              _c("h4", { staticClass: "mb-3" }, [
-                _c(
-                  "span",
-                  {
-                    staticClass: "counter-value",
-                    attrs: { "data-target": "18.34" }
-                  },
-                  [_vm._v("0")]
-                ),
-                _vm._v("%\n                            ")
-              ]),
-              _vm._v(" "),
-              _c("div", { staticClass: "text-nowrap" }, [
-                _c(
-                  "span",
-                  { staticClass: "badge bg-soft-warning text-warning" },
-                  [_vm._v("+5.32%")]
-                ),
-                _vm._v(" "),
-                _c("span", { staticClass: "ms-1 text-muted font-size-13" }, [
-                  _vm._v("Since last week")
-                ])
-              ])
-            ]),
-            _vm._v(" "),
-            _c("div", { staticClass: "flex-shrink-0 text-end dash-widget" }, [
-              _c("div", {
-                staticClass: "apex-charts",
-                attrs: {
-                  id: "mini-chart4",
-                  "data-colors": '["#6951ce", "#f04d80"]'
-                }
-              })
-            ])
-          ])
-        ])
       ])
     ])
   },
@@ -7616,6 +7631,7 @@ render._withStripped = true
 var map = {
 	"./components/ExampleComponent.vue": "./resources/js/components/ExampleComponent.vue",
 	"./components/backend/components/breadcrumbComponent.vue": "./resources/js/components/backend/components/breadcrumbComponent.vue",
+	"./components/backend/components/charts/epieChartComponent.vue": "./resources/js/components/backend/components/charts/epieChartComponent.vue",
 	"./components/backend/components/miniChartComponent.vue": "./resources/js/components/backend/components/miniChartComponent.vue",
 	"./components/backend/pages/dashboard/HomeComponent.vue": "./resources/js/components/backend/pages/dashboard/HomeComponent.vue",
 	"./components/backend/pages/error/401Component.vue": "./resources/js/components/backend/pages/error/401Component.vue",

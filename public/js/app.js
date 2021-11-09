@@ -38821,6 +38821,16 @@ var map = {
 		9,
 		"resources_js_components_backend_components_breadcrumbComponent_vue"
 	],
+	"./components/backend/components/charts/epieChartComponent": [
+		"./resources/js/components/backend/components/charts/epieChartComponent.vue",
+		9,
+		"resources_js_components_backend_components_charts_epieChartComponent_vue"
+	],
+	"./components/backend/components/charts/epieChartComponent.vue": [
+		"./resources/js/components/backend/components/charts/epieChartComponent.vue",
+		9,
+		"resources_js_components_backend_components_charts_epieChartComponent_vue"
+	],
 	"./components/backend/components/miniChartComponent": [
 		"./resources/js/components/backend/components/miniChartComponent.vue",
 		9,
@@ -39078,7 +39088,7 @@ module.exports = JSON.parse('{"_args":[["axios@0.21.4","C:\\\\laragon\\\\www\\\\
 /******/ 		// This function allow to reference async chunks
 /******/ 		__webpack_require__.u = (chunkId) => {
 /******/ 			// return url for filenames not based on template
-/******/ 			if ({"resources_js_components_backend_components_breadcrumbComponent_vue":1,"resources_js_components_backend_components_miniChartComponent_vue":1,"resources_js_components_backend_pages_dashboard_HomeComponent_vue":1,"resources_js_components_backend_pages_error_401Component_vue":1,"resources_js_components_backend_pages_error_404Component_vue":1,"resources_js_components_backend_pages_user_UsersComponent_vue":1,"resources_js_components_backend_pages_user_UsersTable_vue":1,"resources_js_components_frontend_locationPickerComponent_vue":1,"resources_js_frontend_app_js":1}[chunkId]) return "js/" + chunkId + ".js";
+/******/ 			if ({"resources_js_components_backend_components_breadcrumbComponent_vue":1,"resources_js_components_backend_components_charts_epieChartComponent_vue":1,"resources_js_components_backend_components_miniChartComponent_vue":1,"resources_js_components_backend_pages_dashboard_HomeComponent_vue":1,"resources_js_components_backend_pages_error_401Component_vue":1,"resources_js_components_backend_pages_error_404Component_vue":1,"resources_js_components_backend_pages_user_UsersComponent_vue":1,"resources_js_components_backend_pages_user_UsersTable_vue":1,"resources_js_components_frontend_locationPickerComponent_vue":1,"resources_js_frontend_app_js":1}[chunkId]) return "js/" + chunkId + ".js";
 /******/ 			// return url for filenames based on template
 /******/ 			return undefined;
 /******/ 		};

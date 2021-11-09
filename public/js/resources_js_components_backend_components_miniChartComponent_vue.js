@@ -36,14 +36,13 @@ __webpack_require__.r(__webpack_exports__);
 //
 //
 //
-//
-//
 /* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = ({
+  props: ['title', 'index'],
   methods: {
     loadMiniChart: function loadMiniChart() {
-      var barchartColors = getChartColorsArray("#mini-chart");
+      var barchartColors = getChartColorsArray("#mini-chart" + this.index);
       var options = {
-        series: [60, 50],
+        series: [60, 40],
         chart: {
           type: "donut",
           height: 115
@@ -56,7 +55,7 @@ __webpack_require__.r(__webpack_exports__);
           enabled: false
         }
       };
-      var chart = new ApexCharts(document.querySelector("#mini-chart"), options);
+      var chart = new ApexCharts(document.querySelector("#mini-chart" + this.index), options);
       chart.render();
     }
   },
@@ -152,63 +151,60 @@ var render = function() {
   var _vm = this
   var _h = _vm.$createElement
   var _c = _vm._self._c || _h
-  return _vm._m(0)
+  return _c("div", { staticClass: "card card-h-100" }, [
+    _c("div", { staticClass: "card-body" }, [
+      _c("div", { staticClass: "d-flex align-items-center" }, [
+        _c("div", { staticClass: "flex-grow-1" }, [
+          _c(
+            "span",
+            { staticClass: "text-muted mb-3 lh-1 d-block text-truncate" },
+            [_vm._v("Total " + _vm._s(_vm.title))]
+          ),
+          _vm._v(" "),
+          _vm._m(0),
+          _vm._v(" "),
+          _vm._m(1)
+        ]),
+        _vm._v(" "),
+        _c("div", { staticClass: "flex-shrink-0 text-end dash-widget" }, [
+          _c("div", {
+            staticClass: "apex-charts",
+            attrs: {
+              id: "mini-chart" + _vm.index,
+              "data-colors": '["#6951ce", "#f04d80"]'
+            }
+          })
+        ])
+      ])
+    ])
+  ])
 }
 var staticRenderFns = [
   function() {
     var _vm = this
     var _h = _vm.$createElement
     var _c = _vm._self._c || _h
-    return _c("div", [
-      _c("div", { staticClass: "card card-h-100" }, [
-        _c("div", { staticClass: "card-body" }, [
-          _c("div", { staticClass: "d-flex align-items-center" }, [
-            _c("div", { staticClass: "flex-grow-1" }, [
-              _c(
-                "span",
-                { staticClass: "text-muted mb-3 lh-1 d-block text-truncate" },
-                [_vm._v("Total Sales")]
-              ),
-              _vm._v(" "),
-              _c("h4", { staticClass: "mb-3" }, [
-                _vm._v(
-                  "\n                                                    $"
-                ),
-                _c(
-                  "span",
-                  {
-                    staticClass: "counter-value",
-                    attrs: { "data-target": "354.5" }
-                  },
-                  [_vm._v("0")]
-                ),
-                _vm._v("k\n                                                ")
-              ]),
-              _vm._v(" "),
-              _c("div", { staticClass: "text-nowrap" }, [
-                _c(
-                  "span",
-                  { staticClass: "badge bg-soft-warning text-warning" },
-                  [_vm._v("+$20.9k")]
-                ),
-                _vm._v(" "),
-                _c("span", { staticClass: "ms-1 text-muted font-size-13" }, [
-                  _vm._v("Since last week")
-                ])
-              ])
-            ]),
-            _vm._v(" "),
-            _c("div", { staticClass: "flex-shrink-0 text-end dash-widget" }, [
-              _c("div", {
-                staticClass: "apex-charts",
-                attrs: {
-                  id: "mini-chart",
-                  "data-colors": '["#6951ce", "#f04d80"]'
-                }
-              })
-            ])
-          ])
-        ])
+    return _c("h4", { staticClass: "mb-3" }, [
+      _vm._v("\n               $"),
+      _c(
+        "span",
+        { staticClass: "counter-value", attrs: { "data-target": "354.5" } },
+        [_vm._v("0")]
+      ),
+      _vm._v("k\n            ")
+    ])
+  },
+  function() {
+    var _vm = this
+    var _h = _vm.$createElement
+    var _c = _vm._self._c || _h
+    return _c("div", { staticClass: "text-nowrap" }, [
+      _c("span", { staticClass: "badge bg-soft-warning text-warning" }, [
+        _vm._v("+$20.9k")
+      ]),
+      _vm._v(" "),
+      _c("span", { staticClass: "ms-1 text-muted font-size-13" }, [
+        _vm._v("Since last week")
       ])
     ])
   }
