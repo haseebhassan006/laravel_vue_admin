@@ -89,6 +89,9 @@ class HelperComponent
                 "heading" => "Content",
             ],
             [
+                "single_link" => setSingleLink("Services", "layers", "services-view", "/services"),
+            ],
+            [
                 "heading" => "Tool",
             ],
             [

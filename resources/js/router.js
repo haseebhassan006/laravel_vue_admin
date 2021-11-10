@@ -6,7 +6,7 @@ Vue.use(VueRouter);
 
 function setComponent(path_file) {
     const route_path = "./components/backend/pages/" + path_file + "Component.vue";
-    return import ("" + route_path);
+    return import("" + route_path);
 }
 const routes = [
     { path: "*", component: () => setComponent("error/404") },
@@ -15,14 +15,18 @@ const routes = [
         path: "/",
         redirect: { path: '/dashboard' }
     },
-    { path: "/dashboard", component: () => setComponent("dashboard/Home"), name: "Dashboard",
-     meta: {permissions:"dashboard-view" }
+    {
+        path: "/dashboard", component: () => setComponent("dashboard/Home"), name: "Dashboard",
+        meta: { permissions: "dashboard-view" }
     },
     {
         path: "/users", component: () => setComponent("user/Users"), name: "Users",
         meta: { permissions: "users-view" }
     },
-
+    {
+        path: "/services", component: () => setComponent("service/Services"), name: "Services",
+        meta: { permissions: "services-view" }
+    },
 
 
 ];
