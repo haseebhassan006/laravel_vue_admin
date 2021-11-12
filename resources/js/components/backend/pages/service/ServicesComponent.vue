@@ -14,74 +14,103 @@
                                             <div class="col-md-6">
                                                 <div class="d-flex flex-wrap align-items-center justify-content-end gap-2 mb-3">
                                                     <div>
-                                                        <a href="#" class="btn btn-light"><i class="bx bx-plus me-1"></i> Add Service</a>
-                                                    </div>
-
-                                                    <div class="dropdown">
-                                                        <a class="btn btn-link text-muted py-1 font-size-16 shadow-none dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
-                                                            <i class="bx bx-dots-horizontal-rounded"></i>
-                                                        </a>
+                                                        <a role="button" class="btn btn-light" @click="openModal()"><i class="bx bx-plus me-1"></i> Add Service</a>
                                                     </div>
                                                 </div>
-
                                             </div>
                                         </div>
                                         <!-- end row -->
-
                                         <div class="table-responsive mb-4">
-                                            <table class="table align-middle datatable dt-responsive table-check nowrap" style="border-collapse: collapse; border-spacing: 0 8px; width: 100%;">
-                                                <thead>
+                                        <table id="datatable-buttons" class="table table-bordered dt-responsive nowrap w-100">
+                                            <thead>
                                                 <tr>
-                                                    <th scope="col" style="width: 50px;">
-                                                        <div class="form-check font-size-16">
-                                                            <input type="checkbox" class="form-check-input" id="checkAll">
-                                                            <label class="form-check-label" for="checkAll"></label>
-                                                        </div>
-                                                    </th>
-                                                    <th scope="col">Name</th>
-                                                    <th style="width: 80px; min-width: 80px;">Action</th>
+                                                    <th>Name</th>
+                                                    <th>Position</th>
+                                                    <th>Office</th>
+                                                    <th>Age</th>
+                                                    <th>Start date</th>
+                                                    <th>Salary</th>
                                                 </tr>
-                                                </thead>
-                                                <tbody>
-                                                    <tr>
-                                                        <th scope="row">
-                                                            <div class="form-check font-size-16">
-                                                                <input type="checkbox" class="form-check-input" id="contacusercheck1">
-                                                                <label class="form-check-label" for="contacusercheck1"></label>
-                                                            </div>
-                                                        </th>
-                                                        <td>
-                                                            <span>
-                                                                
-                                                            </span>
-                                                        </td>
-                                                    </tr>
-
-
-                                                </tbody>
-                                            </table>
-                                            <!-- end table -->
+                                            </thead>
+                                            <tbody>
+                                            <tr>
+                                                <td>Tiger Nixon</td>
+                                                <td>System Architect</td>
+                                                <td>Edinburgh</td>
+                                                <td>61</td>
+                                                <td>2011/04/25</td>
+                                                <td>$320,800</td>
+                                            </tr>
+                                            <tr>
+                                                <td>Garrett Winters</td>
+                                                <td>Accountant</td>
+                                                <td>Tokyo</td>
+                                                <td>63</td>
+                                                <td>2011/07/25</td>
+                                                <td>$170,750</td>
+                                            </tr>
+                                            <tr>
+                                                <td>Ashton Cox</td>
+                                                <td>Junior Technical Author</td>
+                                                <td>San Francisco</td>
+                                                <td>66</td>
+                                                <td>2009/01/12</td>
+                                                <td>$86,000</td>
+                                            </tr>
+                                            <tr>
+                                                <td>Cedric Kelly</td>
+                                                <td>Senior Javascript Developer</td>
+                                                <td>Edinburgh</td>
+                                                <td>22</td>
+                                                <td>2012/03/29</td>
+                                                <td>$433,060</td>
+                                            </tr>                                      
+                                            </tbody>
+                                          </table>
                                         </div>
                                         <!-- end table responsive -->
                                    </div>
                                </div>
                      </div>
-                </div>
-            </div> <!-- container-fluid -->
-        </div>
-        <!-- End Page-content -->
-    </div>
+            </div>
+        <div class="modal fade bs-modal-lg" tabindex="-1" role="dialog" aria-labelledby="myLargeModalLabel" aria-hidden="true">
+            <div class="modal-dialog modal-lg">
+                    <div class="modal-content">
+                        <div class="modal-header">
+                            <h5 class="modal-title" id="myLargeModalLabel">Create New Service</h5>
+                            <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                        </div>
+                        <div class="modal-body">
+                           <ServiceForm ></ServiceForm>
+                        </div>
+                    </div>
+                    <!-- /.modal-content -->
+            </div>
+   <!-- /.modal-dialog -->
+</div>
+<!-- /.modal -->
+    </div> <!--end-->
 </template>
 
 <script>
 import breadcrumb from '../../components/breadcrumbComponent';
-    export default {
-        components:{breadcrumb},
+import ServiceForm from "./ServiceFormComponent.vue";
+export default {
+        components:{breadcrumb,ServiceForm},
         data(){
             return{
                 services:[],
             };
         },
+        methods:{
+
+            openModal(){
+                $('.bs-modal-lg').modal('show')
+            },
+        },
+        mounted(){
+              
+        }
     }
 </script>
 

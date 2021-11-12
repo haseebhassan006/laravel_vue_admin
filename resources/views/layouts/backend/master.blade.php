@@ -225,6 +225,8 @@
         <!-- dashboard init -->
         <script src="{{asset('assets/js/pages/dashboard.init.js')}}"></script>
                <!-- echarts js -->
+
+   
         <script src="{{asset('assets/libs/echarts/echarts.min.js')}}"></script>
         <!-- echarts init -->
         <script src="{{asset('assets/js/pages/echarts.init.js')}}"></script>
