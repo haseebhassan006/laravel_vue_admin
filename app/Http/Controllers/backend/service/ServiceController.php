@@ -2,9 +2,10 @@
 
 namespace App\Http\Controllers\backend\service;
 
-use App\Http\Controllers\Controller;
 use App\Models\Service;
+use Illuminate\Support\Str;
 use Illuminate\Http\Request;
+use App\Http\Controllers\Controller;
 
 class ServiceController extends Controller
 {
@@ -15,7 +16,8 @@ class ServiceController extends Controller
      */
     public function index()
     {
-        $services=Service::latest()->get();
+        $q=request('query');
+        $services=Service::latest()->where('name', 'like', '%' . $q . '%')->paginate(env('PAR_PAGE'));
         return response()->json(['services'=>$services]);
     }
 
@@ -37,7 +39,13 @@ class ServiceController extends Controller
      */
     public function store(Request $request)
     {
-        //
+            $validated = $request->validate([
+                'name' => 'required|unique:services|max:255',
+            ]);
+        return Service::create([
+            'name'=>$request->name,
+            'slug'=>Str::snake($request->name, '-'),
+        ]);
     }
 
     /**
@@ -71,7 +79,13 @@ class ServiceController extends Controller
      */
     public function update(Request $request, $id)
     {
-        //
+        $validated = $request->validate([
+                'name' => 'required|unique:services,name,'.$id,
+        ]);
+        return Service::where('id',$id)->update([
+            'name'=>$request->name,
+            'slug'=>Str::snake($request->name, '-'),
+        ]);
     }
 
     /**
@@ -82,6 +96,6 @@ class ServiceController extends Controller
      */
     public function destroy($id)
     {
-        //
+      return Service::destroy($id);
     }
 }

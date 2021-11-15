@@ -203,7 +203,33 @@
     </div>
         <!-- Right bar overlay-->
         <div class="rightbar-overlay"></div>
+      <script>
+          window.primarycolor="#1e204f";
+// window.appname={!! json_encode(config('app.name'),true)!!};
+     @auth
+        
+          window.user = [];
+         window.permissions = [];
 
+     @else
+         window.user = [];
+         window.permissions = [];
+     @endauth
+     @if(session('login')=="true" || session('login')==true)
+     setTimeout(function() {
+     // toastr['success'](
+     // 'You have successfully logged in to {{config('app.name')}}.',
+     // '👋 Welcome {{Auth::user()->name}}!', {
+     //     closeButton: true,
+     //      tapToDismiss: false
+     // }
+     // );
+     }, 1000);
+     @php
+     session(['login' => '']);
+     @endphp
+     @endif
+</script>
         <!-- JAVASCRIPT -->
         <script src="{{asset('assets/libs/jquery/jquery.min.js')}}"></script>
         <script src="{{asset('assets/libs/bootstrap/js/bootstrap.bundle.min.js')}}"></script>
