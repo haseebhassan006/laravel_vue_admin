@@ -3038,9 +3038,498 @@ __webpack_require__.r(__webpack_exports__);
 //
 //
 //
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
 /* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = ({
   mounted: function mounted() {
-    console.log('Component mounted.');
+    console.log("Component mounted.");
   }
 });
 
@@ -3226,8 +3715,12 @@ __webpack_require__.r(__webpack_exports__);
 //
 //
 //
+//
+//
+//
+//
 /* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = ({
-  props: ['title', 'datalabel', 'data'],
+  props: ["title", "datalabel", "data"],
   data: function data() {
     return {
       option: null
@@ -3313,8 +3806,7 @@ __webpack_require__.r(__webpack_exports__);
 //
 //
 //
-//
-props: ['title', 'datalabel', 'data', 'label', 'index'];
+props: ["title", "labels", "data", "label", "index"];
 
 /* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = ({
   data: function data() {
@@ -3336,18 +3828,18 @@ props: ['title', 'datalabel', 'data', 'label', 'index'];
         legend: {
           orient: "vertical",
           left: "left",
-          data: this.datalabel,
+          data: [],
           textStyle: {
             color: "#858d98"
           }
         },
         color: pieColors,
         series: [{
-          name: 'Total ' + this.label,
+          name: "Total " + this.label,
           type: "pie",
           radius: "55%",
           center: ["50%", "60%"],
-          data: this.data,
+          data: [],
           itemStyle: {
             emphasis: {
               shadowBlur: 10,
@@ -3361,7 +3853,7 @@ props: ['title', 'datalabel', 'data', 'label', 'index'];
   },
   mounted: function mounted() {
     this.loadPieChart();
-    console.log('Component mounted.Pie');
+    console.log("Component mounted.Pie");
   } // mounted(){
   // this.loadPieChart();
   // }
@@ -3422,13 +3914,15 @@ __webpack_require__.r(__webpack_exports__);
 //
 //
 //
+//
 /* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = ({
-  props: ['title', 'index'],
+  props: ['title', 'index', 'label', 'series'],
   methods: {
     loadMiniChart: function loadMiniChart() {
       var barchartColors = getChartColorsArray("#mini-chart" + this.index);
       var options = {
-        series: [60, 40],
+        labels: [this.series[0].title, this.series[1].title],
+        series: [this.series[0].value, this.series[1].value],
         chart: {
           type: "donut",
           height: 115
@@ -4383,7 +4877,8 @@ __webpack_require__.r(__webpack_exports__);
   },
   data: function data() {
     return {
-      prevRoute: null
+      prevRoute: null,
+      auth_user: {}
     };
   },
   beforeRouteEnter: function beforeRouteEnter(to, from, next) {
@@ -4394,6 +4889,7 @@ __webpack_require__.r(__webpack_exports__);
     });
   },
   mounted: function mounted() {
+    this.auth_user = user;
     console.log('Component mounted.');
   }
 });
@@ -25383,7 +25879,7 @@ var staticRenderFns = [
             "div",
             {
               staticClass:
-                "page-title-box d-sm-flex align-items-center justify-content-between"
+                "\n          page-title-box\n          d-sm-flex\n          align-items-center\n          justify-content-between\n        "
             },
             [
               _c("h4", { staticClass: "mb-sm-0 font-size-18" }, [
@@ -25423,7 +25919,7 @@ var staticRenderFns = [
                   ),
                   _vm._v(" "),
                   _c("h4", { staticClass: "mb-3" }, [
-                    _vm._v("\n                                $"),
+                    _vm._v("\n                $"),
                     _c(
                       "span",
                       {
@@ -25432,7 +25928,7 @@ var staticRenderFns = [
                       },
                       [_vm._v("0")]
                     ),
-                    _vm._v("k\n                            ")
+                    _vm._v("k\n              ")
                   ]),
                   _vm._v(" "),
                   _c("div", { staticClass: "text-nowrap" }, [
@@ -25458,7 +25954,7 @@ var staticRenderFns = [
                       staticClass: "apex-charts",
                       attrs: {
                         id: "mini-chart1",
-                        "data-colors": '["#6951ce", "#f04d80"]'
+                        "data-colors": '["#33c38e ", "#1c84ee"]'
                       }
                     })
                   ]
@@ -25515,7 +26011,7 @@ var staticRenderFns = [
                       staticClass: "apex-charts",
                       attrs: {
                         id: "mini-chart2",
-                        "data-colors": '["#6951ce", "#f04d80"]'
+                        "data-colors": '["#33c38e ", "#1c84ee"]'
                       }
                     })
                   ]
@@ -25539,7 +26035,7 @@ var staticRenderFns = [
                   ),
                   _vm._v(" "),
                   _c("h4", { staticClass: "mb-3" }, [
-                    _vm._v("\n                                $"),
+                    _vm._v("\n                $"),
                     _c(
                       "span",
                       {
@@ -25548,7 +26044,7 @@ var staticRenderFns = [
                       },
                       [_vm._v("0")]
                     ),
-                    _vm._v("M\n                            ")
+                    _vm._v("M\n              ")
                   ]),
                   _vm._v(" "),
                   _c("div", { staticClass: "text-nowrap" }, [
@@ -25574,7 +26070,7 @@ var staticRenderFns = [
                       staticClass: "apex-charts",
                       attrs: {
                         id: "mini-chart3",
-                        "data-colors": '["#6951ce", "#f04d80"]'
+                        "data-colors": '["#33c38e ", "#1c84ee"]'
                       }
                     })
                   ]
@@ -25606,7 +26102,7 @@ var staticRenderFns = [
                       },
                       [_vm._v("0")]
                     ),
-                    _vm._v("%\n                            ")
+                    _vm._v("%\n              ")
                   ]),
                   _vm._v(" "),
                   _c("div", { staticClass: "text-nowrap" }, [
@@ -25632,7 +26128,7 @@ var staticRenderFns = [
                       staticClass: "apex-charts",
                       attrs: {
                         id: "mini-chart4",
-                        "data-colors": '["#6951ce", "#f04d80"]'
+                        "data-colors": '["#33c38e ", "#1c84ee"]'
                       }
                     })
                   ]
@@ -25663,11 +26159,7 @@ var staticRenderFns = [
                           staticClass: "btn btn-soft-primary btn-sm",
                           attrs: { type: "button" }
                         },
-                        [
-                          _vm._v(
-                            "\n                                    ALL\n                                "
-                          )
-                        ]
+                        [_vm._v("\n                  ALL\n                ")]
                       ),
                       _vm._v(" "),
                       _c(
@@ -25676,11 +26168,7 @@ var staticRenderFns = [
                           staticClass: "btn btn-soft-secondary btn-sm",
                           attrs: { type: "button" }
                         },
-                        [
-                          _vm._v(
-                            "\n                                    1M\n                                "
-                          )
-                        ]
+                        [_vm._v("\n                  1M\n                ")]
                       ),
                       _vm._v(" "),
                       _c(
@@ -25689,11 +26177,7 @@ var staticRenderFns = [
                           staticClass: "btn btn-soft-secondary btn-sm",
                           attrs: { type: "button" }
                         },
-                        [
-                          _vm._v(
-                            "\n                                    6M\n                                "
-                          )
-                        ]
+                        [_vm._v("\n                  6M\n                ")]
                       ),
                       _vm._v(" "),
                       _c(
@@ -25702,11 +26186,7 @@ var staticRenderFns = [
                           staticClass: "btn btn-soft-secondary btn-sm active",
                           attrs: { type: "button" }
                         },
-                        [
-                          _vm._v(
-                            "\n                                    1Y\n                                "
-                          )
-                        ]
+                        [_vm._v("\n                  1Y\n                ")]
                       )
                     ])
                   ])
@@ -25720,7 +26200,7 @@ var staticRenderFns = [
                       staticClass: "apex-charts",
                       attrs: {
                         id: "market-overview",
-                        "data-colors": '["#6951ce", "#f04d80"]'
+                        "data-colors": '["#33c38e ", "#1c84ee"]'
                       }
                     })
                   ])
@@ -25735,11 +26215,11 @@ var staticRenderFns = [
                             "span",
                             {
                               staticClass:
-                                "avatar-title rounded-circle bg-light text-dark font-size-13"
+                                "\n                          avatar-title\n                          rounded-circle\n                          bg-light\n                          text-dark\n                          font-size-13\n                        "
                             },
                             [
                               _vm._v(
-                                "\n                                                1\n                                            "
+                                "\n                        1\n                      "
                               )
                             ]
                           )
@@ -25756,7 +26236,7 @@ var staticRenderFns = [
                             "span",
                             {
                               staticClass:
-                                "badge rounded-pill badge-soft-warning font-size-12 fw-medium"
+                                "\n                          badge\n                          rounded-pill\n                          badge-soft-warning\n                          font-size-12\n                          fw-medium\n                        "
                             },
                             [_vm._v("+5.4%")]
                           )
@@ -25771,11 +26251,11 @@ var staticRenderFns = [
                             "span",
                             {
                               staticClass:
-                                "avatar-title rounded-circle bg-light text-dark font-size-13"
+                                "\n                          avatar-title\n                          rounded-circle\n                          bg-light\n                          text-dark\n                          font-size-13\n                        "
                             },
                             [
                               _vm._v(
-                                "\n                                                2\n                                            "
+                                "\n                        2\n                      "
                               )
                             ]
                           )
@@ -25792,7 +26272,7 @@ var staticRenderFns = [
                             "span",
                             {
                               staticClass:
-                                "badge rounded-pill badge-soft-warning font-size-12 fw-medium"
+                                "\n                          badge\n                          rounded-pill\n                          badge-soft-warning\n                          font-size-12\n                          fw-medium\n                        "
                             },
                             [_vm._v("+6.8%")]
                           )
@@ -25807,11 +26287,11 @@ var staticRenderFns = [
                             "span",
                             {
                               staticClass:
-                                "avatar-title rounded-circle bg-light text-dark font-size-13"
+                                "\n                          avatar-title\n                          rounded-circle\n                          bg-light\n                          text-dark\n                          font-size-13\n                        "
                             },
                             [
                               _vm._v(
-                                "\n                                                3\n                                            "
+                                "\n                        3\n                      "
                               )
                             ]
                           )
@@ -25828,7 +26308,7 @@ var staticRenderFns = [
                             "span",
                             {
                               staticClass:
-                                "badge rounded-pill badge-soft-danger font-size-12 fw-medium"
+                                "\n                          badge\n                          rounded-pill\n                          badge-soft-danger\n                          font-size-12\n                          fw-medium\n                        "
                             },
                             [_vm._v("-4.9%")]
                           )
@@ -25843,11 +26323,11 @@ var staticRenderFns = [
                             "span",
                             {
                               staticClass:
-                                "avatar-title rounded-circle bg-light text-dark font-size-13"
+                                "\n                          avatar-title\n                          rounded-circle\n                          bg-light\n                          text-dark\n                          font-size-13\n                        "
                             },
                             [
                               _vm._v(
-                                "\n                                                4\n                                            "
+                                "\n                        4\n                      "
                               )
                             ]
                           )
@@ -25864,7 +26344,7 @@ var staticRenderFns = [
                             "span",
                             {
                               staticClass:
-                                "badge rounded-pill badge-soft-warning font-size-12 fw-medium"
+                                "\n                          badge\n                          rounded-pill\n                          badge-soft-warning\n                          font-size-12\n                          fw-medium\n                        "
                             },
                             [_vm._v("+3.5%")]
                           )
@@ -25879,11 +26359,11 @@ var staticRenderFns = [
                             "span",
                             {
                               staticClass:
-                                "avatar-title rounded-circle bg-light text-dark font-size-13"
+                                "\n                          avatar-title\n                          rounded-circle\n                          bg-light\n                          text-dark\n                          font-size-13\n                        "
                             },
                             [
                               _vm._v(
-                                "\n                                                5\n                                            "
+                                "\n                        5\n                      "
                               )
                             ]
                           )
@@ -25900,7 +26380,7 @@ var staticRenderFns = [
                             "span",
                             {
                               staticClass:
-                                "badge rounded-pill badge-soft-danger font-size-12 fw-medium"
+                                "\n                          badge\n                          rounded-pill\n                          badge-soft-danger\n                          font-size-12\n                          fw-medium\n                        "
                             },
                             [_vm._v("-0.3%")]
                           )
@@ -26013,7 +26493,7 @@ var staticRenderFns = [
                 staticStyle: { height: "253px" },
                 attrs: {
                   id: "sales-by-locations",
-                  "data-colors": '["#f04d80"]'
+                  "data-colors": '["#10dae6"]'
                 }
               }),
               _vm._v(" "),
@@ -26071,7 +26551,7 @@ var staticRenderFns = [
                 ),
                 _vm._v(" "),
                 _c("p", { staticClass: "mt-3 mb-1" }, [
-                  _vm._v("Australia "),
+                  _vm._v("\n              Australia "),
                   _c("span", { staticClass: "float-end" }, [_vm._v("85%")])
                 ]),
                 _vm._v(" "),
@@ -26117,7 +26597,7 @@ var staticRenderFns = [
                     _c(
                       "a",
                       {
-                        staticClass: " dropdown-toggle",
+                        staticClass: "dropdown-toggle",
                         attrs: {
                           href: "#",
                           id: "dropdownMenuButton2",
@@ -26225,7 +26705,7 @@ var staticRenderFns = [
                           [
                             _c("i", {
                               staticClass:
-                                "bx bx-dots-vertical-rounded font-size-24 text-dark"
+                                "\n                        bx bx-dots-vertical-rounded\n                        font-size-24\n                        text-dark\n                      "
                             })
                           ]
                         ),
@@ -26313,7 +26793,7 @@ var staticRenderFns = [
                           [
                             _c("i", {
                               staticClass:
-                                "bx bx-dots-vertical-rounded font-size-24 text-dark"
+                                "\n                        bx bx-dots-vertical-rounded\n                        font-size-24\n                        text-dark\n                      "
                             })
                           ]
                         ),
@@ -26401,7 +26881,7 @@ var staticRenderFns = [
                           [
                             _c("i", {
                               staticClass:
-                                "bx bx-dots-vertical-rounded font-size-24 text-dark"
+                                "\n                        bx bx-dots-vertical-rounded\n                        font-size-24\n                        text-dark\n                      "
                             })
                           ]
                         ),
@@ -26489,7 +26969,7 @@ var staticRenderFns = [
                           [
                             _c("i", {
                               staticClass:
-                                "bx bx-dots-vertical-rounded font-size-24 text-dark"
+                                "\n                        bx bx-dots-vertical-rounded\n                        font-size-24\n                        text-dark\n                      "
                             })
                           ]
                         ),
@@ -26577,7 +27057,7 @@ var staticRenderFns = [
                           [
                             _c("i", {
                               staticClass:
-                                "bx bx-dots-vertical-rounded font-size-24 text-dark"
+                                "\n                        bx bx-dots-vertical-rounded\n                        font-size-24\n                        text-dark\n                      "
                             })
                           ]
                         ),
@@ -26665,7 +27145,7 @@ var staticRenderFns = [
                           [
                             _c("i", {
                               staticClass:
-                                "bx bx-dots-vertical-rounded font-size-24 text-dark"
+                                "\n                        bx bx-dots-vertical-rounded\n                        font-size-24\n                        text-dark\n                      "
                             })
                           ]
                         ),
@@ -27052,7 +27532,7 @@ var staticRenderFns = [
                                   staticClass: "text-dark",
                                   attrs: { href: "" }
                                 }),
-                                _vm._v("Hoodie (Blue)")
+                                _vm._v("Hoodie (Blue)\n                      ")
                               ]),
                               _vm._v(" "),
                               _c("span", { staticClass: "text-muted" }, [
@@ -27129,7 +27609,9 @@ var staticRenderFns = [
                                   staticClass: "text-dark",
                                   attrs: { href: "" }
                                 }),
-                                _vm._v("Half sleeve T-Shirt")
+                                _vm._v(
+                                  "Half sleeve T-Shirt\n                      "
+                                )
                               ]),
                               _vm._v(" "),
                               _c("span", { staticClass: "text-muted" }, [
@@ -27206,7 +27688,9 @@ var staticRenderFns = [
                                   staticClass: "text-dark",
                                   attrs: { href: "" }
                                 }),
-                                _vm._v("Green color T-shirt")
+                                _vm._v(
+                                  "Green color T-shirt\n                      "
+                                )
                               ]),
                               _vm._v(" "),
                               _c("span", { staticClass: "text-muted" }, [
@@ -27544,9 +28028,7 @@ var staticRenderFns = [
                                 ),
                                 _vm._v(" "),
                                 _c("p", { staticClass: "mb-0" }, [
-                                  _vm._v(
-                                    "\n                                                        Hi there, How are you?\n                                                    "
-                                  )
+                                  _vm._v("Hi there, How are you?")
                                 ])
                               ]),
                               _vm._v(" "),
@@ -27641,7 +28123,7 @@ var staticRenderFns = [
                                 _vm._v(" "),
                                 _c("p", { staticClass: "mb-0" }, [
                                   _vm._v(
-                                    "\n                                                        Waiting for your reply.As I heve to go back soon. i have to travel long distance.\n                                                    "
+                                    "\n                            Waiting for your reply.As I heve to go back soon.\n                            i have to travel long distance.\n                          "
                                   )
                                 ])
                               ]),
@@ -27733,7 +28215,7 @@ var staticRenderFns = [
                                 _vm._v(" "),
                                 _c("p", { staticClass: "mb-0" }, [
                                   _vm._v(
-                                    "\n                                                        Hi, I am coming there in few minutes. Please wait!! I am in taxi right now.\n                                                    "
+                                    "\n                            Hi, I am coming there in few minutes. Please\n                            wait!! I am in taxi right now.\n                          "
                                   )
                                 ])
                               ]),
@@ -27841,7 +28323,7 @@ var staticRenderFns = [
                                 _vm._v(" "),
                                 _c("p", { staticClass: "mb-0" }, [
                                   _vm._v(
-                                    "\n                                                        Thank You very much, I am waiting here at StarBuck cafe.\n                                                    "
+                                    "\n                            Thank You very much, I am waiting here at StarBuck\n                            cafe.\n                          "
                                   )
                                 ])
                               ]),
@@ -27941,7 +28423,7 @@ var staticRenderFns = [
                                 _vm._v(" "),
                                 _c("p", { staticClass: "mb-0" }, [
                                   _vm._v(
-                                    "\n                                                        img-1.jpg & img-2.jpg images for a New Projects\n                                                    "
+                                    "\n                            img-1.jpg & img-2.jpg images for a New Projects\n                          "
                                   )
                                 ]),
                                 _vm._v(" "),
@@ -27949,7 +28431,7 @@ var staticRenderFns = [
                                   "ul",
                                   {
                                     staticClass:
-                                      "list-inline message-img mt-3  mb-0"
+                                      "list-inline message-img mt-3 mb-0"
                                   },
                                   [
                                     _c(
@@ -28099,7 +28581,7 @@ var staticRenderFns = [
                       "button",
                       {
                         staticClass:
-                          "btn btn-primary chat-send w-md waves-effect waves-light",
+                          "\n                    btn btn-primary\n                    chat-send\n                    w-md\n                    waves-effect waves-light\n                  ",
                         attrs: { type: "submit" }
                       },
                       [
@@ -28304,7 +28786,7 @@ var staticRenderFns = [
         attrs: {
           id: "doughnut-chart",
           "data-colors":
-            '["#6951ce", "#ffcc5a", "#34c38f", "#16daf1", "#f04d80"]'
+            '["#a10909", "#ffcc5a", "#34c38f", "#16daf1", "#10dae6"]'
         }
       })
     ])
@@ -28336,7 +28818,7 @@ var render = function() {
     _c("div", { staticClass: "card" }, [
       _c("div", { staticClass: "card-header" }, [
         _c("h4", { staticClass: "card-title mb-0" }, [
-          _vm._v(" " + _vm._s(_vm.title) + " Chart")
+          _vm._v(_vm._s(_vm.title) + " Chart")
         ])
       ]),
       _vm._v(" "),
@@ -28344,9 +28826,9 @@ var render = function() {
         _c("div", {
           staticClass: "e-charts",
           attrs: {
-            id: "pie-chart" + _vm.index,
+            id: "pie-chart" + this.index,
             "data-colors":
-              '["#34c38f", "#f04d80", "#16daf1", "#ffcc5a", "#6951ce"]'
+              '["#34c38f", "#10dae6", "#16daf1", "#ffcc5a", "#a10909"]'
           }
         })
       ])
@@ -28386,9 +28868,26 @@ var render = function() {
             [_vm._v("Total " + _vm._s(_vm.title))]
           ),
           _vm._v(" "),
-          _vm._m(0),
+          _c("h4", { staticClass: "mb-3" }, [
+            _c(
+              "span",
+              {
+                staticClass: "counter-value",
+                attrs: { "data-target": this.series[0].value }
+              },
+              [_vm._v(_vm._s(this.series[0].value))]
+            )
+          ]),
           _vm._v(" "),
-          _vm._m(1)
+          _c("div", { staticClass: "text-nowrap" }, [
+            _c("span", { staticClass: "badge bg-soft-primary text-primary" }, [
+              _vm._v(_vm._s(this.series[1].value))
+            ]),
+            _vm._v(" "),
+            _c("span", { staticClass: "ms-1 text-muted font-size-13" }, [
+              _vm._v(_vm._s(_vm.label))
+            ])
+          ])
         ]),
         _vm._v(" "),
         _c("div", { staticClass: "flex-shrink-0 text-end dash-widget" }, [
@@ -28396,7 +28895,7 @@ var render = function() {
             staticClass: "apex-charts",
             attrs: {
               id: "mini-chart" + _vm.index,
-              "data-colors": '["#6951ce", "#f04d80"]'
+              "data-colors": '["#33c38e ", "#1c84ee"]'
             }
           })
         ])
@@ -28404,36 +28903,7 @@ var render = function() {
     ])
   ])
 }
-var staticRenderFns = [
-  function() {
-    var _vm = this
-    var _h = _vm.$createElement
-    var _c = _vm._self._c || _h
-    return _c("h4", { staticClass: "mb-3" }, [
-      _vm._v("\n               $"),
-      _c(
-        "span",
-        { staticClass: "counter-value", attrs: { "data-target": "354.5" } },
-        [_vm._v("0")]
-      ),
-      _vm._v("k\n            ")
-    ])
-  },
-  function() {
-    var _vm = this
-    var _h = _vm.$createElement
-    var _c = _vm._self._c || _h
-    return _c("div", { staticClass: "text-nowrap" }, [
-      _c("span", { staticClass: "badge bg-soft-warning text-warning" }, [
-        _vm._v("+$20.9k")
-      ]),
-      _vm._v(" "),
-      _c("span", { staticClass: "ms-1 text-muted font-size-13" }, [
-        _vm._v("Since last week")
-      ])
-    ])
-  }
-]
+var staticRenderFns = []
 render._withStripped = true
 
 
@@ -28507,40 +28977,126 @@ var render = function() {
   var _h = _vm.$createElement
   var _c = _vm._self._c || _h
   return _c("div", [
-    _vm._m(0),
+    _c("div", { staticClass: "row" }, [
+      _c("div", { staticClass: "col-12" }, [
+        _c(
+          "div",
+          {
+            staticClass:
+              "page-title-box d-sm-flex align-items-center justify-content-between"
+          },
+          [
+            _c("h4", { staticClass: "mb-sm-0 font-size-18" }, [
+              _vm._v("Hi, " + _vm._s(_vm.auth_user.name) + " ! ")
+            ]),
+            _vm._v(" "),
+            _c("div", { staticClass: "page-title-right" }, [
+              _c("ol", { staticClass: "breadcrumb m-0" }, [
+                _vm._m(0),
+                _vm._v(" "),
+                _c("li", { staticClass: "breadcrumb-item active" }, [
+                  _vm._v("Welcome, " + _vm._s(_vm.auth_user.name) + "!")
+                ])
+              ])
+            ])
+          ]
+        )
+      ])
+    ]),
     _vm._v(" "),
     _c("div", { staticClass: "row" }, [
       _c(
         "div",
         { staticClass: "col-xl-3 col-md-6" },
-        [_c("minichart", { attrs: { title: "Demoe", index: 1 } })],
+        [
+          _c("minichart", {
+            attrs: {
+              title: "Orders",
+              index: 1,
+              series: [
+                { title: "All Orders", value: 100 },
+                { title: "New Orders", value: 20 }
+              ],
+              label: "Since last week"
+            }
+          })
+        ],
         1
       ),
       _vm._v(" "),
       _c(
         "div",
         { staticClass: "col-xl-3 col-md-6" },
-        [_c("minichart", { attrs: { title: "Test", index: 2 } })],
+        [
+          _c("minichart", {
+            attrs: {
+              title: "Members",
+              index: 2,
+              series: [
+                { title: "All Members", value: 500 },
+                { title: "New Members", value: 10 }
+              ],
+              label: "Since last month"
+            }
+          })
+        ],
         1
       ),
       _vm._v(" "),
       _c(
         "div",
         { staticClass: "col-xl-3 col-md-6" },
-        [_c("minichart", { attrs: { title: "Test", index: 3 } })],
+        [
+          _c("minichart", {
+            attrs: {
+              title: "Customers",
+              index: 3,
+              series: [
+                { title: "All Customers", value: 100 },
+                { title: "New Members", value: 30 }
+              ],
+              label: "Since last week"
+            }
+          })
+        ],
         1
       ),
       _vm._v(" "),
       _c(
         "div",
         { staticClass: "col-xl-3 col-md-6" },
-        [_c("minichart", { attrs: { title: "Test", index: 4 } })],
+        [
+          _c("minichart", {
+            attrs: {
+              title: "Customers",
+              index: 4,
+              series: [
+                { title: "All Subscribers", value: 340 },
+                { title: "New Members", value: 90 }
+              ],
+              label: "Since last week"
+            }
+          })
+        ],
         1
       )
     ]),
     _vm._v(" "),
     _c("div", { staticClass: "row" }, [
-      _c("div", { staticClass: "col-md-6" }, [_c("epieChart")], 1)
+      _c(
+        "div",
+        { staticClass: "col-md-6" },
+        [
+          _c("epieChart", {
+            attrs: {
+              labels: ["All", "Today", "Last Day", "LastWeek"],
+              title: "Orders",
+              index: 1
+            }
+          })
+        ],
+        1
+      )
     ]),
     _vm._v(" "),
     _vm._m(1),
@@ -28553,34 +29109,9 @@ var staticRenderFns = [
     var _vm = this
     var _h = _vm.$createElement
     var _c = _vm._self._c || _h
-    return _c("div", { staticClass: "row" }, [
-      _c("div", { staticClass: "col-12" }, [
-        _c(
-          "div",
-          {
-            staticClass:
-              "page-title-box d-sm-flex align-items-center justify-content-between"
-          },
-          [
-            _c("h4", { staticClass: "mb-sm-0 font-size-18" }, [
-              _vm._v("Welcome !")
-            ]),
-            _vm._v(" "),
-            _c("div", { staticClass: "page-title-right" }, [
-              _c("ol", { staticClass: "breadcrumb m-0" }, [
-                _c("li", { staticClass: "breadcrumb-item" }, [
-                  _c("a", { attrs: { href: "javascript: void(0);" } }, [
-                    _vm._v("Dashboard")
-                  ])
-                ]),
-                _vm._v(" "),
-                _c("li", { staticClass: "breadcrumb-item active" }, [
-                  _vm._v("Welcome !")
-                ])
-              ])
-            ])
-          ]
-        )
+    return _c("li", { staticClass: "breadcrumb-item" }, [
+      _c("a", { attrs: { href: "javascript: void(0);" } }, [
+        _vm._v("Dashboard")
       ])
     ])
   },
@@ -28665,7 +29196,7 @@ var staticRenderFns = [
                     staticClass: "apex-charts",
                     attrs: {
                       id: "market-overview",
-                      "data-colors": '["#6951ce", "#f04d80"]'
+                      "data-colors": '["#33c38e ", "#1c84ee"]'
                     }
                   })
                 ])
@@ -28952,7 +29483,7 @@ var staticRenderFns = [
             _vm._v(" "),
             _c("div", {
               staticStyle: { height: "253px" },
-              attrs: { id: "sales-by-locations", "data-colors": '["#f04d80"]' }
+              attrs: { id: "sales-by-locations", "data-colors": '["#10dae6"]' }
             }),
             _vm._v(" "),
             _c("div", { staticClass: "px-2 py-2" }, [

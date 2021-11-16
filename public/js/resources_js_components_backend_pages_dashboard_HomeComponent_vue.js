@@ -25,8 +25,7 @@ __webpack_require__.r(__webpack_exports__);
 //
 //
 //
-//
-props: ['title', 'datalabel', 'data', 'label', 'index'];
+props: ["title", "labels", "data", "label", "index"];
 
 /* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = ({
   data: function data() {
@@ -48,18 +47,18 @@ props: ['title', 'datalabel', 'data', 'label', 'index'];
         legend: {
           orient: "vertical",
           left: "left",
-          data: this.datalabel,
+          data: [],
           textStyle: {
             color: "#858d98"
           }
         },
         color: pieColors,
         series: [{
-          name: 'Total ' + this.label,
+          name: "Total " + this.label,
           type: "pie",
           radius: "55%",
           center: ["50%", "60%"],
-          data: this.data,
+          data: [],
           itemStyle: {
             emphasis: {
               shadowBlur: 10,
@@ -73,7 +72,7 @@ props: ['title', 'datalabel', 'data', 'label', 'index'];
   },
   mounted: function mounted() {
     this.loadPieChart();
-    console.log('Component mounted.Pie');
+    console.log("Component mounted.Pie");
   } // mounted(){
   // this.loadPieChart();
   // }
@@ -133,13 +132,15 @@ __webpack_require__.r(__webpack_exports__);
 //
 //
 //
+//
 /* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = ({
-  props: ['title', 'index'],
+  props: ['title', 'index', 'label', 'series'],
   methods: {
     loadMiniChart: function loadMiniChart() {
       var barchartColors = getChartColorsArray("#mini-chart" + this.index);
       var options = {
-        series: [60, 40],
+        labels: [this.series[0].title, this.series[1].title],
+        series: [this.series[0].value, this.series[1].value],
         chart: {
           type: "donut",
           height: 115
@@ -1067,7 +1068,8 @@ __webpack_require__.r(__webpack_exports__);
   },
   data: function data() {
     return {
-      prevRoute: null
+      prevRoute: null,
+      auth_user: {}
     };
   },
   beforeRouteEnter: function beforeRouteEnter(to, from, next) {
@@ -1078,6 +1080,7 @@ __webpack_require__.r(__webpack_exports__);
     });
   },
   mounted: function mounted() {
+    this.auth_user = user;
     console.log('Component mounted.');
   }
 });
@@ -1310,7 +1313,7 @@ var render = function() {
     _c("div", { staticClass: "card" }, [
       _c("div", { staticClass: "card-header" }, [
         _c("h4", { staticClass: "card-title mb-0" }, [
-          _vm._v(" " + _vm._s(_vm.title) + " Chart")
+          _vm._v(_vm._s(_vm.title) + " Chart")
         ])
       ]),
       _vm._v(" "),
@@ -1318,9 +1321,9 @@ var render = function() {
         _c("div", {
           staticClass: "e-charts",
           attrs: {
-            id: "pie-chart" + _vm.index,
+            id: "pie-chart" + this.index,
             "data-colors":
-              '["#34c38f", "#f04d80", "#16daf1", "#ffcc5a", "#6951ce"]'
+              '["#34c38f", "#10dae6", "#16daf1", "#ffcc5a", "#a10909"]'
           }
         })
       ])
@@ -1359,9 +1362,26 @@ var render = function() {
             [_vm._v("Total " + _vm._s(_vm.title))]
           ),
           _vm._v(" "),
-          _vm._m(0),
+          _c("h4", { staticClass: "mb-3" }, [
+            _c(
+              "span",
+              {
+                staticClass: "counter-value",
+                attrs: { "data-target": this.series[0].value }
+              },
+              [_vm._v(_vm._s(this.series[0].value))]
+            )
+          ]),
           _vm._v(" "),
-          _vm._m(1)
+          _c("div", { staticClass: "text-nowrap" }, [
+            _c("span", { staticClass: "badge bg-soft-primary text-primary" }, [
+              _vm._v(_vm._s(this.series[1].value))
+            ]),
+            _vm._v(" "),
+            _c("span", { staticClass: "ms-1 text-muted font-size-13" }, [
+              _vm._v(_vm._s(_vm.label))
+            ])
+          ])
         ]),
         _vm._v(" "),
         _c("div", { staticClass: "flex-shrink-0 text-end dash-widget" }, [
@@ -1369,7 +1389,7 @@ var render = function() {
             staticClass: "apex-charts",
             attrs: {
               id: "mini-chart" + _vm.index,
-              "data-colors": '["#6951ce", "#f04d80"]'
+              "data-colors": '["#33c38e ", "#1c84ee"]'
             }
           })
         ])
@@ -1377,36 +1397,7 @@ var render = function() {
     ])
   ])
 }
-var staticRenderFns = [
-  function() {
-    var _vm = this
-    var _h = _vm.$createElement
-    var _c = _vm._self._c || _h
-    return _c("h4", { staticClass: "mb-3" }, [
-      _vm._v("\n               $"),
-      _c(
-        "span",
-        { staticClass: "counter-value", attrs: { "data-target": "354.5" } },
-        [_vm._v("0")]
-      ),
-      _vm._v("k\n            ")
-    ])
-  },
-  function() {
-    var _vm = this
-    var _h = _vm.$createElement
-    var _c = _vm._self._c || _h
-    return _c("div", { staticClass: "text-nowrap" }, [
-      _c("span", { staticClass: "badge bg-soft-warning text-warning" }, [
-        _vm._v("+$20.9k")
-      ]),
-      _vm._v(" "),
-      _c("span", { staticClass: "ms-1 text-muted font-size-13" }, [
-        _vm._v("Since last week")
-      ])
-    ])
-  }
-]
+var staticRenderFns = []
 render._withStripped = true
 
 
@@ -1429,40 +1420,126 @@ var render = function() {
   var _h = _vm.$createElement
   var _c = _vm._self._c || _h
   return _c("div", [
-    _vm._m(0),
+    _c("div", { staticClass: "row" }, [
+      _c("div", { staticClass: "col-12" }, [
+        _c(
+          "div",
+          {
+            staticClass:
+              "page-title-box d-sm-flex align-items-center justify-content-between"
+          },
+          [
+            _c("h4", { staticClass: "mb-sm-0 font-size-18" }, [
+              _vm._v("Hi, " + _vm._s(_vm.auth_user.name) + " ! ")
+            ]),
+            _vm._v(" "),
+            _c("div", { staticClass: "page-title-right" }, [
+              _c("ol", { staticClass: "breadcrumb m-0" }, [
+                _vm._m(0),
+                _vm._v(" "),
+                _c("li", { staticClass: "breadcrumb-item active" }, [
+                  _vm._v("Welcome, " + _vm._s(_vm.auth_user.name) + "!")
+                ])
+              ])
+            ])
+          ]
+        )
+      ])
+    ]),
     _vm._v(" "),
     _c("div", { staticClass: "row" }, [
       _c(
         "div",
         { staticClass: "col-xl-3 col-md-6" },
-        [_c("minichart", { attrs: { title: "Demoe", index: 1 } })],
+        [
+          _c("minichart", {
+            attrs: {
+              title: "Orders",
+              index: 1,
+              series: [
+                { title: "All Orders", value: 100 },
+                { title: "New Orders", value: 20 }
+              ],
+              label: "Since last week"
+            }
+          })
+        ],
         1
       ),
       _vm._v(" "),
       _c(
         "div",
         { staticClass: "col-xl-3 col-md-6" },
-        [_c("minichart", { attrs: { title: "Test", index: 2 } })],
+        [
+          _c("minichart", {
+            attrs: {
+              title: "Members",
+              index: 2,
+              series: [
+                { title: "All Members", value: 500 },
+                { title: "New Members", value: 10 }
+              ],
+              label: "Since last month"
+            }
+          })
+        ],
         1
       ),
       _vm._v(" "),
       _c(
         "div",
         { staticClass: "col-xl-3 col-md-6" },
-        [_c("minichart", { attrs: { title: "Test", index: 3 } })],
+        [
+          _c("minichart", {
+            attrs: {
+              title: "Customers",
+              index: 3,
+              series: [
+                { title: "All Customers", value: 100 },
+                { title: "New Members", value: 30 }
+              ],
+              label: "Since last week"
+            }
+          })
+        ],
         1
       ),
       _vm._v(" "),
       _c(
         "div",
         { staticClass: "col-xl-3 col-md-6" },
-        [_c("minichart", { attrs: { title: "Test", index: 4 } })],
+        [
+          _c("minichart", {
+            attrs: {
+              title: "Customers",
+              index: 4,
+              series: [
+                { title: "All Subscribers", value: 340 },
+                { title: "New Members", value: 90 }
+              ],
+              label: "Since last week"
+            }
+          })
+        ],
         1
       )
     ]),
     _vm._v(" "),
     _c("div", { staticClass: "row" }, [
-      _c("div", { staticClass: "col-md-6" }, [_c("epieChart")], 1)
+      _c(
+        "div",
+        { staticClass: "col-md-6" },
+        [
+          _c("epieChart", {
+            attrs: {
+              labels: ["All", "Today", "Last Day", "LastWeek"],
+              title: "Orders",
+              index: 1
+            }
+          })
+        ],
+        1
+      )
     ]),
     _vm._v(" "),
     _vm._m(1),
@@ -1475,34 +1552,9 @@ var staticRenderFns = [
     var _vm = this
     var _h = _vm.$createElement
     var _c = _vm._self._c || _h
-    return _c("div", { staticClass: "row" }, [
-      _c("div", { staticClass: "col-12" }, [
-        _c(
-          "div",
-          {
-            staticClass:
-              "page-title-box d-sm-flex align-items-center justify-content-between"
-          },
-          [
-            _c("h4", { staticClass: "mb-sm-0 font-size-18" }, [
-              _vm._v("Welcome !")
-            ]),
-            _vm._v(" "),
-            _c("div", { staticClass: "page-title-right" }, [
-              _c("ol", { staticClass: "breadcrumb m-0" }, [
-                _c("li", { staticClass: "breadcrumb-item" }, [
-                  _c("a", { attrs: { href: "javascript: void(0);" } }, [
-                    _vm._v("Dashboard")
-                  ])
-                ]),
-                _vm._v(" "),
-                _c("li", { staticClass: "breadcrumb-item active" }, [
-                  _vm._v("Welcome !")
-                ])
-              ])
-            ])
-          ]
-        )
+    return _c("li", { staticClass: "breadcrumb-item" }, [
+      _c("a", { attrs: { href: "javascript: void(0);" } }, [
+        _vm._v("Dashboard")
       ])
     ])
   },
@@ -1587,7 +1639,7 @@ var staticRenderFns = [
                     staticClass: "apex-charts",
                     attrs: {
                       id: "market-overview",
-                      "data-colors": '["#6951ce", "#f04d80"]'
+                      "data-colors": '["#33c38e ", "#1c84ee"]'
                     }
                   })
                 ])
@@ -1874,7 +1926,7 @@ var staticRenderFns = [
             _vm._v(" "),
             _c("div", {
               staticStyle: { height: "253px" },
-              attrs: { id: "sales-by-locations", "data-colors": '["#f04d80"]' }
+              attrs: { id: "sales-by-locations", "data-colors": '["#10dae6"]' }
             }),
             _vm._v(" "),
             _c("div", { staticClass: "px-2 py-2" }, [

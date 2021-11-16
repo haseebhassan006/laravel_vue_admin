@@ -208,8 +208,10 @@
 // window.appname={!! json_encode(config('app.name'),true)!!};
      @auth
         
-          window.user = [];
-         window.permissions = [];
+       
+         window.user = {!! json_encode(Auth::user(), true) !!};
+
+        window.permissions = [];
 
      @else
          window.user = [];
@@ -229,7 +231,15 @@
      session(['login' => '']);
      @endphp
      @endif
+         
 </script>
+{{--    //   window.permissions = {!! json_encode(Auth::user()->permissions->pluck('name'), true) !!};
+        //  let roles_permissions = {!! json_encode(Auth::user()->getPermissionsViaRoles()->pluck('name'), true) !!};
+        //  roles_permissions.map((item)=>{
+            // if(permissions.indexOf(item) === -1) {
+            //   permissions.push(item);
+            // }
+        //  }); */ --}}
         <!-- JAVASCRIPT -->
         <script src="{{asset('assets/libs/jquery/jquery.min.js')}}"></script>
         <script src="{{asset('assets/libs/bootstrap/js/bootstrap.bundle.min.js')}}"></script>
