@@ -3573,10 +3573,19 @@ function _asyncToGenerator(fn) { return function () { var self = this, args = ar
     };
   },
   methods: {
+    openLoading: function openLoading() {
+      var loading = this.$vs.loading({
+        text: 'rectangle'
+      });
+      setTimeout(function () {
+        loading.close();
+      }, 2000);
+    },
     //asyncdata
     searchQuery: _.debounce(function () {
       var _this = this;
 
+      this.openLoading();
       this.$emit("loading", true);
       setTimeout(function () {
         _this.search();

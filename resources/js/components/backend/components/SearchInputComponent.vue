@@ -18,9 +18,16 @@ props:['label','name','apiurl'],
     };
   },
   methods: {
+     openLoading() {
+          const loading = this.$vs.loading({text:'rectangle'})
+          setTimeout(() => {
+            loading.close()
+          }, 2000)
+        },
     //asyncdata
     searchQuery: _.debounce(
       function () {
+        this.openLoading();
         this.$emit("loading", true);
         setTimeout(() => {
             this.search();
