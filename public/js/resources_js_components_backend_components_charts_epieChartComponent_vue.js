@@ -25,9 +25,8 @@ __webpack_require__.r(__webpack_exports__);
 //
 //
 //
-props: ["title", "labels", "data", "label", "index"];
-
 /* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = ({
+  props: ["title", "labels", "data", "label", "index"],
   data: function data() {
     return {
       option: null
@@ -35,8 +34,8 @@ props: ["title", "labels", "data", "label", "index"];
   },
   methods: {
     loadPieChart: function loadPieChart() {
-      var pieColors = getChartColorsArray("#pie-chart");
-      dom = document.getElementById("pie-chart");
+      var pieColors = getChartColorsArray("#pie-chart" + this.index);
+      dom = document.getElementById("pie-chart" + this.index);
       myChart = echarts.init(dom);
       app = {};
       this.option = null, this.option = {
@@ -47,7 +46,7 @@ props: ["title", "labels", "data", "label", "index"];
         legend: {
           orient: "vertical",
           left: "left",
-          data: [],
+          data: this.labels,
           textStyle: {
             color: "#858d98"
           }
@@ -58,7 +57,7 @@ props: ["title", "labels", "data", "label", "index"];
           type: "pie",
           radius: "55%",
           center: ["50%", "60%"],
-          data: [],
+          data: this.data,
           itemStyle: {
             emphasis: {
               shadowBlur: 10,
@@ -72,7 +71,7 @@ props: ["title", "labels", "data", "label", "index"];
   },
   mounted: function mounted() {
     this.loadPieChart();
-    console.log("Component mounted.Pie");
+    console.log("Component mounted.Pie", this.index);
   } // mounted(){
   // this.loadPieChart();
   // }
@@ -193,9 +192,9 @@ var render = function() {
         _c("div", {
           staticClass: "e-charts",
           attrs: {
-            id: "pie-chart" + this.index,
+            id: "pie-chart" + _vm.index,
             "data-colors":
-              '["#34c38f", "#10dae6", "#16daf1", "#ffcc5a", "#a10909"]'
+              '["#34c38f", "#0a068c", "#16daf1", "#ffcc5a", "#a10909"]'
           }
         })
       ])

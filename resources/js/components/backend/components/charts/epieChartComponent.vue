@@ -5,7 +5,7 @@
         <h4 class="card-title mb-0">{{ title }} Chart</h4>
       </div>
       <div class="card-body">
-        <div :id="'pie-chart' + this.index" data-colors='["#34c38f", "#10dae6", "#16daf1", "#ffcc5a", "#a10909"]' class="e-charts"></div>
+        <div :id="'pie-chart' + index" data-colors='["#34c38f", "#0a068c", "#16daf1", "#ffcc5a", "#a10909"]' class="e-charts"></div>
       </div>
     </div>
     <!-- end card -->
@@ -13,8 +13,9 @@
   <!-- end col -->
 </template>
 <script>
-props: ["title", "labels", "data", "label", "index"];
+
 export default {
+  props: ["title", "labels", "data", "label", "index"],
   data() {
     return {
       option: null,
@@ -22,8 +23,8 @@ export default {
   },
   methods: {
     loadPieChart() {
-      var pieColors = getChartColorsArray("#pie-chart");
-      dom = document.getElementById("pie-chart");
+      var pieColors = getChartColorsArray("#pie-chart"+this.index);
+      dom = document.getElementById("pie-chart"+this.index);
       myChart = echarts.init(dom);
       app = {};
       (this.option = null),
@@ -35,7 +36,7 @@ export default {
           legend: {
             orient: "vertical",
             left: "left",
-            data: [],
+            data: this.labels,
             textStyle: {
               color: "#858d98",
             },
@@ -47,7 +48,7 @@ export default {
               type: "pie",
               radius: "55%",
               center: ["50%", "60%"],
-              data: [],
+              data: this.data,
               itemStyle: {
                 emphasis: {
                   shadowBlur: 10,
@@ -68,7 +69,7 @@ export default {
   },
   mounted() {
     this.loadPieChart();
-    console.log("Component mounted.Pie");
+    console.log("Component mounted.Pie",this.index);
   },
   // mounted(){
   // this.loadPieChart();

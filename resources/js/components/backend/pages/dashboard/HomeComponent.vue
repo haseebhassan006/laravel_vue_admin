@@ -34,8 +34,11 @@
     </div><!-- end row-->
      <div class="row">
         <div class="col-md-6">
-           <epieChart :labels="['All','Today','Last Day','LastWeek']" :title="'Orders'" :index="1"></epieChart>
+           <epieChart title="Orders" label="Users" :index="1" :data="[{value: 335,name:'Users'},{value: 200,name:'Members'},{value: 40,name:'Customers'},{value: 80,name:'Subscribers'},{value: 20,name:'Daily'}]" ></epieChart>
         </div>
+         <div class="col-md-6">
+             <edoughtnutChart index="1" :data="[{value: 335,name:'Users'},{value: 335,name:'New Users'}]"></edoughtnutChart>
+         </div>
      </div>
     <div class="row">
         <div class="col-xl-8">
@@ -883,8 +886,9 @@
 <script>
 import minichart from "../../components/miniChartComponent"
 import epieChart from "../../components/charts/epieChartComponent";
+import edoughtnutChart from "../../components/charts/edoughnutChartComponent.vue";
     export default {
-        components: {minichart,epieChart},
+        components: {minichart,epieChart,edoughtnutChart},
         data() {
             return {
             prevRoute: null,

@@ -1752,9 +1752,8 @@ __webpack_require__.r(__webpack_exports__);
 //
 //
 //
-props: ["title", "labels", "data", "label", "index"];
-
 /* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = ({
+  props: ["title", "labels", "data", "label", "index"],
   data: function data() {
     return {
       option: null
@@ -1762,8 +1761,8 @@ props: ["title", "labels", "data", "label", "index"];
   },
   methods: {
     loadPieChart: function loadPieChart() {
-      var pieColors = getChartColorsArray("#pie-chart");
-      dom = document.getElementById("pie-chart");
+      var pieColors = getChartColorsArray("#pie-chart" + this.index);
+      dom = document.getElementById("pie-chart" + this.index);
       myChart = echarts.init(dom);
       app = {};
       this.option = null, this.option = {
@@ -1774,7 +1773,7 @@ props: ["title", "labels", "data", "label", "index"];
         legend: {
           orient: "vertical",
           left: "left",
-          data: [],
+          data: this.labels,
           textStyle: {
             color: "#858d98"
           }
@@ -1785,7 +1784,7 @@ props: ["title", "labels", "data", "label", "index"];
           type: "pie",
           radius: "55%",
           center: ["50%", "60%"],
-          data: [],
+          data: this.data,
           itemStyle: {
             emphasis: {
               shadowBlur: 10,
@@ -1799,7 +1798,7 @@ props: ["title", "labels", "data", "label", "index"];
   },
   mounted: function mounted() {
     this.loadPieChart();
-    console.log("Component mounted.Pie");
+    console.log("Component mounted.Pie", this.index);
   } // mounted(){
   // this.loadPieChart();
   // }
@@ -1932,6 +1931,7 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony export */ });
 /* harmony import */ var _components_miniChartComponent__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ../../components/miniChartComponent */ "./resources/js/components/backend/components/miniChartComponent.vue");
 /* harmony import */ var _components_charts_epieChartComponent__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ../../components/charts/epieChartComponent */ "./resources/js/components/backend/components/charts/epieChartComponent.vue");
+/* harmony import */ var _components_charts_edoughnutChartComponent_vue__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ../../components/charts/edoughnutChartComponent.vue */ "./resources/js/components/backend/components/charts/edoughnutChartComponent.vue");
 //
 //
 //
@@ -2814,12 +2814,17 @@ __webpack_require__.r(__webpack_exports__);
 //
 //
 //
+//
+//
+//
+
 
 
 /* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = ({
   components: {
     minichart: _components_miniChartComponent__WEBPACK_IMPORTED_MODULE_0__["default"],
-    epieChart: _components_charts_epieChartComponent__WEBPACK_IMPORTED_MODULE_1__["default"]
+    epieChart: _components_charts_epieChartComponent__WEBPACK_IMPORTED_MODULE_1__["default"],
+    edoughtnutChart: _components_charts_edoughnutChartComponent_vue__WEBPACK_IMPORTED_MODULE_2__["default"]
   },
   data: function data() {
     return {
@@ -8988,9 +8993,9 @@ var render = function() {
         _c("div", {
           staticClass: "e-charts",
           attrs: {
-            id: "pie-chart" + this.index,
+            id: "pie-chart" + _vm.index,
             "data-colors":
-              '["#34c38f", "#10dae6", "#16daf1", "#ffcc5a", "#a10909"]'
+              '["#34c38f", "#0a068c", "#16daf1", "#ffcc5a", "#a10909"]'
           }
         })
       ])
@@ -9251,9 +9256,33 @@ var render = function() {
         [
           _c("epieChart", {
             attrs: {
-              labels: ["All", "Today", "Last Day", "LastWeek"],
               title: "Orders",
-              index: 1
+              label: "Users",
+              index: 1,
+              data: [
+                { value: 335, name: "Users" },
+                { value: 200, name: "Members" },
+                { value: 40, name: "Customers" },
+                { value: 80, name: "Subscribers" },
+                { value: 20, name: "Daily" }
+              ]
+            }
+          })
+        ],
+        1
+      ),
+      _vm._v(" "),
+      _c(
+        "div",
+        { staticClass: "col-md-6" },
+        [
+          _c("edoughtnutChart", {
+            attrs: {
+              index: "1",
+              data: [
+                { value: 335, name: "Users" },
+                { value: 335, name: "New Users" }
+              ]
             }
           })
         ],
